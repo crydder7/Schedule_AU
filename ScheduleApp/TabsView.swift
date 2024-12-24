@@ -29,7 +29,7 @@ func parse(jsonData: Data) -> ScheduleFull? {
 
 
 
-struct ContentView: View {
+struct TabsView: View {
     @StateObject private var calendarManager = CalendarManager()
     let dateForm = DateFormatter()
     @State private var accessGranted = false
@@ -48,7 +48,7 @@ struct ContentView: View {
     
     var body: some View {
         TabView {
-            Tab{
+            Tab("Calendar", systemImage: "calendar") {
                 VStack{
                     Form{
                         DatePicker("Дата 📆", selection: $pickedDate, displayedComponents: [.date])
@@ -122,9 +122,16 @@ struct ContentView: View {
                         .scrollContentBackground(.hidden)
                 }
             }
-            .customizationID("1")
+            Tab("Info", systemImage: "info.circle.fill") {
+                ZStack{
+                    RoundedRectangle(cornerRadius: 15)
+                        .frame(width: UIScreen.main.bounds.width - 70, height: UIScreen.main.bounds.height / 5)
+                        .foregroundStyle(.blue)
+                }
+            }
         }
         .tabViewStyle(.sidebarAdaptable)
+        .animation(.snappy)
         
     }
 }
@@ -132,5 +139,5 @@ struct ContentView: View {
 
 
 #Preview {
-    ContentView()
+    TabsView()
 }
