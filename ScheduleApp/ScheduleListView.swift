@@ -39,6 +39,7 @@ struct ScheduleListView: View {
                             }
                         }
                     }).buttonStyle(.borderedProminent)
+                        .transition(.slide)
                     .frame(minHeight: 30)
                 }
             }

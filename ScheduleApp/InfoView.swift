@@ -4,6 +4,10 @@ import SwiftUI
 struct InfoView: View {
     @State var animateButton: Bool = false
     @State var gradientColors: [Color] = [.blue, .purple]
+    let smallHeight = UIScreen.main.bounds.height / 6
+    let smallWidth = UIScreen.main.bounds.width - 100
+    let bigHeight = UIScreen.main.bounds.height / 5
+    let bigWidth = UIScreen.main.bounds.width - 70
     var body: some View {
         VStack{
             Image("au_gold")
@@ -25,9 +29,14 @@ struct InfoView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
                         
                     HStack{
+                        Image("telegram")
+                            .resizable(resizingMode: .stretch)
+                            .frame(width: smallWidth / 6, height: smallHeight / 3)
+                            .scaledToFit()
+                            
                         Text("Telegram")
                             .foregroundStyle(.black)
-                            .font(.custom("fear No more", size: 20))
+                            .font(.custom("Roboto-Black", size: 30))
                     }
     //                        Label("Telegram", image: "")
     //                            .font(.custom("Fear No More", size: 15))
@@ -45,6 +54,7 @@ struct InfoView: View {
                 .padding()
             }
         }
+        .transition(.slide)
         .padding()
     }
 }

@@ -18,7 +18,6 @@ struct TabsView: View {
         }
         .tabViewStyle(.sidebarAdaptable)
         .animation(.snappy)
-        
     }
 }
 
