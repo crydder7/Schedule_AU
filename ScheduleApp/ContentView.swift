@@ -1,32 +1,7 @@
 import SwiftUI
 import EventKit
 
-class CalendarManager: ObservableObject {
-    let eventStore = EKEventStore()
-    
-    func requestAccess(completion: @escaping (Bool, Error?) -> Void) {
-        eventStore.requestFullAccessToEvents(){granted, error in
-            DispatchQueue.main.async {
-                completion(granted, error)
-            }
-        }
-    }
-    func createEvent(title: String, startDate: Date, endDate: Date, completion: @escaping (Bool, Error?) -> Void) {
-        let event = EKEvent(eventStore: eventStore)
-        
-        event.title = title
-        event.startDate = startDate
-        event.endDate = endDate
-        event.calendar = eventStore.defaultCalendarForNewEvents
-        
-        do {
-            try eventStore.save(event, span: .thisEvent)
-            completion(true, nil)
-        } catch {
-            completion(false, error)
-        }
-    }
-}
+
 
 func readLocalJSONFile(forName name: String) -> Data? {
     do {
@@ -52,29 +27,7 @@ func parse(jsonData: Data) -> ScheduleFull? {
     return nil
 }
 
-struct ScheduleListView: View {
-    @Binding var pickedSchedule: [Schedule]
-    
-    var body: some View {
-        List(pickedSchedule) { schedule in
-            Section(header: Text("Group \(schedule.group) - \(schedule.weekDay.capitalized)")) {
-                ForEach(Array(zip(schedule.lessons, schedule.times)), id: \.0) { lesson, time in
-                    HStack {
-                        Text(lesson)
-                        Spacer()
-                        Text(time)
-                    }
-                    .contextMenu(menuItems: {
-                        Text("<>")
-                    })
-                    .frame(minHeight: 30)
-                }
-            }
-        }
-        .backgroundStyle(.white)
-        .listStyle(InsetGroupedListStyle())
-    }
-}
+
 
 struct ContentView: View {
     @StateObject private var calendarManager = CalendarManager()
@@ -90,76 +43,89 @@ struct ContentView: View {
     @State var fullDates: Bool = false
     @State var isScrollable: Bool = false
     @State var animate: Bool = false
+    @State var isLoad: Bool = false
     
     
     var body: some View {
-        VStack{
-            Form{
-                DatePicker("Дата 📆", selection: $pickedDate, displayedComponents: [.date])
-                    .datePickerStyle(.compact)
-                    .pickerStyle(.menu)
-                    .disabled(fullDates)
-                
-                Picker(selection: $pickedGroup, label: Text("Группа 🎓")) {
-                    ForEach(groups, id: \.self){ i in
-                        Text(i)
-                    }
-                }
-                .pickerStyle(.menu)
-                
-                Toggle("Показать расписание на всю неделю 🗓️", isOn: $fullDates)
-                
-                Button {
-                    pickedSchedule = []
-                    let data = readLocalJSONFile(forName: "zxc")
-                    let zxc = parse(jsonData: data!)
-                    guard let zxc = zxc else { showAlert = true; return }
-                    fullSchedule = zxc
-                    if fullDates{
-                        isScrollable = false
-                        for i in fullSchedule!.schedule{
-                            if i.group == pickedGroup{
-                                pickedSchedule.append(i)
-                                animate.toggle()
-                            }
-                        }
-                    } else{
-                        isScrollable = true
-                        for i in fullSchedule!.schedule{
-                            let weekDay = Calendar.current.component(.weekday, from: pickedDate) - 1
-                            if i.weekDay == dateForm.weekdaySymbols[weekDay].lowercased() && i.group == pickedGroup{
-                                pickedSchedule = [i]
-                                animate.toggle()
-                            }
-                        }
-                    }
-                    
-                } label: {
-                    Text("Показать расписание 📅")
-                }
-                .alert("Something wrong", isPresented: $showAlert, actions: {
-                    Button {
+        TabView {
+            Tab{
+                VStack{
+                    Form{
+                        DatePicker("Дата 📆", selection: $pickedDate, displayedComponents: [.date])
+                            .datePickerStyle(.compact)
+                            .pickerStyle(.menu)
+                            .disabled(fullDates)
                         
-                    } label: {
-                        Text("ok")
+                        Picker(selection: $pickedGroup, label: Text("Группа 🎓")) {
+                            ForEach(groups, id: \.self){ i in
+                                Text(i)
+                            }
+                        }
+                        .pickerStyle(.menu)
+                        
+                        Toggle("Показать расписание на всю неделю 🗓️", isOn: $fullDates)
+                        
+                        Button {
+                            pickedSchedule = []
+                            isLoad = true
+                            let data = readLocalJSONFile(forName: "zxc")
+                            let zxc = parse(jsonData: data!)
+                            guard let zxc = zxc else { showAlert = true; return }
+                            fullSchedule = zxc
+                            if fullDates{
+                                isScrollable = false
+                                for i in fullSchedule!.schedule{
+                                    if i.group == pickedGroup{
+                                        pickedSchedule.append(i)
+                                        animate.toggle()
+                                    }
+                                }
+                            } else{
+                                isScrollable = true
+                                for i in fullSchedule!.schedule{
+                                    let weekDay = Calendar.current.component(.weekday, from: pickedDate) - 1
+                                    if i.weekDay == dateForm.weekdaySymbols[weekDay].lowercased() && i.group == pickedGroup{
+                                        pickedSchedule = [i]
+                                        animate.toggle()
+                                    }
+                                }
+                            }
+                            
+                        } label: {
+                            Text("Показать расписание 📅")
+                        }
+                        .alert("Something wrong", isPresented: $showAlert, actions: {
+                            Button {
+                                
+                            } label: {
+                                Text("ok")
+                            }
+                            
+                        })
+                        .buttonStyle(.borderedProminent)
+                        
+                        
                     }
+                    .frame(height: UIScreen.main.bounds.height / 3.5)
+                    .background(.purple, in: .rect(cornerRadius: 10))
+                    .scrollContentBackground(.hidden)
+                    .scrollDisabled(true)
                     
-                })
-                .buttonStyle(.borderedProminent)
-                
-                
+//                    ProgressView()
+//                        .progressViewStyle(.circular)
+                        
+                    ScheduleListView(pickedSchedule: $pickedSchedule)
+                        .scrollDisabled(isScrollable)
+                        .clipped()
+                        .animation(.bouncy, value: animate)
+                        .background(.blue, in: .rect(cornerRadius: 10))
+                        .scrollContentBackground(.hidden)
+                }
             }
-            .frame(height: UIScreen.main.bounds.height / 3)
-            .background(.purple, in: .rect(cornerRadius: 10))
-            .scrollContentBackground(.hidden)
-            .scrollDisabled(true)
-            
-            ScheduleListView(pickedSchedule: $pickedSchedule)
-                .scrollDisabled(isScrollable)
-                .animation(.bouncy, value: animate)
-                .background(.blue, in: .rect(cornerRadius: 10))
-                .scrollContentBackground(.hidden)
+            .customizationID("1")
         }
+        .tabViewStyle(.sidebarAdaptable)
+        
     }
 }
 
