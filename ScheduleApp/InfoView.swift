@@ -25,12 +25,13 @@ struct InfoView: View {
                         .frame(width: UIScreen.main.bounds.width - 100, height: UIScreen.main.bounds.height / 6)
                         .foregroundStyle(LinearGradient(colors: gradientColors, startPoint: .topLeading, endPoint: .bottomTrailing))
                         .shadow(radius: 5)
-                        .border(Color.black, width: 1)
+//                        .border(Color.black, width: 1)
                         .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
                         
                     HStack{
                         Image("telegram")
                             .resizable(resizingMode: .stretch)
+                            .aspectRatio(contentMode: .fit)
                             .frame(width: smallWidth / 6, height: smallHeight / 3)
                             .scaledToFit()
                             

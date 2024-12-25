@@ -24,18 +24,21 @@ struct ScheduleListView: View {
                         ForEach(Array(zip(schedule.lessons, schedule.teachers)), id: \.0){ l, teacher in
                             if l==lesson {
                                 Text("Преподаватель:\(teacher)")
+                                
                             }
                         }
                         Divider()
                         ForEach(Array(zip(schedule.lessons, schedule.fullTimes)), id: \.0){ l, fullTime in
                             if l==lesson {
                                 Text("Время:\(fullTime)")
+                                
                             }
                         }
                         Divider()
                         ForEach(Array(zip(schedule.lessons, schedule.rooms)), id: \.0){ l, room in
                             if l==lesson {
                                 Text("Аудитория:\(room)")
+                                
                             }
                         }
                     }).buttonStyle(.borderedProminent)

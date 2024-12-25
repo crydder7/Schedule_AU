@@ -9,12 +9,13 @@ struct TabsView: View {
 
     var body: some View {
         TabView {
-            Tab("Calendar", systemImage: "calendar") {
+            Tab("Schedule", systemImage: "calendar") {
                 ScheduleView()
             }
             Tab("Info", systemImage: "info.circle.fill") {
                InfoView()
             }
+            
         }
         .tabViewStyle(.sidebarAdaptable)
         .animation(.snappy)
