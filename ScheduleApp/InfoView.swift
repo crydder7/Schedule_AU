@@ -3,7 +3,7 @@ import SwiftUI
 
 struct InfoView: View {
     @State var animateButton: Bool = false
-    @State var gradientColors: [Color] = [.blue, .purple]
+    @State var gradientColors: [Color] = [.blue, .init(red: 0, green: 0.7, blue: 1)]
     let smallHeight = UIScreen.main.bounds.height / 6
     let smallWidth = UIScreen.main.bounds.width - 100
     let bigHeight = UIScreen.main.bounds.height / 5
@@ -11,6 +11,7 @@ struct InfoView: View {
     var body: some View {
         VStack{
             Image("au_gold")
+                .shadow(color:.black,radius: 7)
             Text("Если у вас возникли вопросы или предложения, то обращайтесь в телеграм!")
                 .font(.headline)
                 .multilineTextAlignment(.center)
