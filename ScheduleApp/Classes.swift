@@ -31,13 +31,8 @@ class CalendarManager: ObservableObject {
 struct Schedule: Decodable, Identifiable {
     var id = UUID()
     var group: String
-    var weekDay: String
-    var lessons: [String]
-    var times: [String]
-    var fullTimes: [String]
-    var teachers: [String]
-    var rooms: [String]
-    private enum CodingKeys : String, CodingKey { case group, weekDay, lessons, times, fullTimes, teachers, rooms }
+    var weekDays: [WeekDays]
+    private enum CodingKeys : String, CodingKey { case group, weekDays }
 }
 
 struct ScheduleFull: Decodable, Identifiable {
@@ -46,3 +41,19 @@ struct ScheduleFull: Decodable, Identifiable {
     private enum CodingKeys : String, CodingKey { case schedule }
 }
 
+struct WeekDays: Decodable, Identifiable{
+    var id = UUID()
+    var dayOfWeek: String
+    var lessons: [Lesson]
+    private enum CodingKeys : String, CodingKey { case dayOfWeek, lessons }
+}
+
+struct Lesson: Decodable, Identifiable{
+    var id = UUID()
+    var name: String
+    var room: String
+    var time: String
+    var fullTime: String
+    var teacher: String
+    private enum CodingKeys : String, CodingKey { case name, room, time, fullTime, teacher}
+}

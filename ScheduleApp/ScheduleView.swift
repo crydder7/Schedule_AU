@@ -9,10 +9,13 @@ struct ScheduleView: View {
     @State var pickedSchedule: [Schedule] = []
     @State var showAlert: Bool = false
     @State var fullDates: Bool = false
+//    @State var lessons: [Lesson] = []
     @State var isScrollable: Bool = false
     @State var animate: Bool = false
     @State var isLoad: Bool = false
-
+    @State var group: String = ""
+    @State var weekDays: [WeekDays] = []
+    @State var pickedDay: String = ""
     
     var body: some View {
         VStack{
@@ -32,6 +35,9 @@ struct ScheduleView: View {
                 Toggle("Показать расписание на всю неделю 🗓️", isOn: $fullDates)
                 
                 Button {
+                    weekDays = []
+                    pickedDay = ""
+                    group = ""
                     pickedSchedule = []
                     isLoad = true
                     let data = readLocalJSONFile(forName: "zxc")
@@ -42,17 +48,25 @@ struct ScheduleView: View {
                         isScrollable = false
                         for i in fullSchedule!.schedule{
                             if i.group == pickedGroup{
-                                pickedSchedule.append(i)
+                                for j in i.weekDays{
+                                    weekDays.append(j)
+                                }
+                                self.group = pickedGroup
+                                pickedDay = "full week"
                                 animate.toggle()
                             }
                         }
                     } else{
                         isScrollable = true
                         for i in fullSchedule!.schedule{
-                            let weekDay = Calendar.current.component(.weekday, from: pickedDate) - 1
-                            if i.weekDay == dateForm.weekdaySymbols[weekDay].lowercased() && i.group == pickedGroup{
-                                pickedSchedule = [i]
-                                animate.toggle()
+                            for j in i.weekDays{
+                                let weekDay = Calendar.current.component(.weekday, from: pickedDate) - 1
+                                if j.dayOfWeek == dateForm.weekdaySymbols[weekDay].lowercased() && i.group == pickedGroup{
+                                    pickedDay = j.dayOfWeek
+                                    self.weekDays = [j]
+                                    self.group = pickedGroup
+                                    animate.toggle()
+                                }
                             }
                         }
                     }
@@ -81,14 +95,15 @@ struct ScheduleView: View {
             
 //                    ProgressView()
 //                        .progressViewStyle(.circular)
-                
-            ScheduleListView(pickedSchedule: $pickedSchedule)
-                .scrollDisabled(isScrollable)
-                .clipped()
-                .animation(.bouncy, value: animate)
-                .background(.blue, in: .rect(cornerRadius: 10))
-                .scrollContentBackground(.hidden)
-                .shadow(radius: 5)
+
+                ScheduleListView(group: $group, weekDays: $weekDays, pickedDay: $pickedDay)
+                    .frame(width: UIScreen.main.bounds.width)
+                    .scrollDisabled(isScrollable)
+                    .clipped()
+                    .animation(.bouncy, value: animate)
+                    .scrollContentBackground(.hidden)
+                    .shadow(radius: 5)
+            
         }
         .transition(.slide)
     }

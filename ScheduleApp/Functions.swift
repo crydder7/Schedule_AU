@@ -1,5 +1,5 @@
 import Foundation
-
+//MARK: -JSON parsing funcs
 func readLocalJSONFile(forName name: String) -> Data? {
     do {
         if let filePath = Bundle.main.path(forResource: name, ofType: "json") {

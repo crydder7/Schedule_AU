@@ -1,9 +1,14 @@
 import SwiftUI
 
 struct ScheduleTableView: View {
-    @Binding var pickedSchedule: [Schedule]
+    @Binding var weekDays: [WeekDays]
+    @Binding var pickedDay: String
+    @Binding var group: String
+
     var body: some View {
-        Text("fuck")
+        Table(weekDays) {
+            TableColumn("WeekDay", value: \.dayOfWeek)
+        }
     }
 }
 
