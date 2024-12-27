@@ -8,6 +8,7 @@ struct InfoView: View {
     let smallWidth = UIScreen.main.bounds.width - 100
     let bigHeight = UIScreen.main.bounds.height / 5
     let bigWidth = UIScreen.main.bounds.width - 70
+    
     var body: some View {
         VStack{
             Image("au_gold")

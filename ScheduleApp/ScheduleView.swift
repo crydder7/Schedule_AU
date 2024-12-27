@@ -9,7 +9,6 @@ struct ScheduleView: View {
     @State var pickedSchedule: [Schedule] = []
     @State var showAlert: Bool = false
     @State var fullDates: Bool = false
-//    @State var lessons: [Lesson] = []
     @State var isScrollable: Bool = false
     @State var animate: Bool = false
     @State var isLoad: Bool = false
