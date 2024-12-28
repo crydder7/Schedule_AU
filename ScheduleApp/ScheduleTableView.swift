@@ -32,22 +32,21 @@ struct ScheduleTableView: View {
                         HStack{
                             Text("Сегодня нет пар, можно отдыхать!")
                                 .font(.title)
-                                .foregroundStyle(.black)
                                 .multilineTextAlignment(.center)
-                            
+                            Spacer()
                             Image(systemName: animateSymbol ? "calendar.badge.checkmark" : "calendar")
-                                .symbolEffect(.bounce.up.byLayer, options: .nonRepeating)
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 100, height: 100)
+//                                .symbolEffect(.bounce.up.byLayer, options: .nonRepeating)
+                                .symbolEffect(.bounce.up.byLayer, value: animateSymbol)
+//                                .aspectRatio(contentMode: .fit)
+//                                .frame(width: 100, height: 100)
                                 .font(.system(size: 70))
                                 .foregroundStyle(.blue)
                                 .multilineTextAlignment(.center)
                                 .contentTransition(.symbolEffect(.replace))
-                                .onAppear(){
+                                .onAppear{
                                     animateSymbol = true
                                 }
                         }
-                        .background(.white, in: .rect(cornerRadius: 10))
                     } else{
                         ForEach(day.lessons) { lesson in
                             HStack{
@@ -57,7 +56,6 @@ struct ScheduleTableView: View {
                                 Text("\(lesson.time)")
                                     .multilineTextAlignment(.trailing)
                             }
-                            .background(.white, in: .rect(cornerRadius: 10))
                         }
                     }
                 }

@@ -30,22 +30,23 @@ struct ScheduleListView: View {
             List(weekDays) { weekDay in
                 if weekDay.lessons.isEmpty{
                     Section("Group: \(group) - \(weekDay.dayOfWeek.uppercased())"){
-                        Text("Сегодня нет пар, можно отдыхать!")
-                            .font(.title)
-                            .foregroundStyle(.black)
-                            .multilineTextAlignment(.center)
-                        
-                        Image(systemName: animateSymbol ? "calendar.badge.checkmark" : "calendar")
-                            .symbolEffect(.bounce.up.byLayer, options: .nonRepeating)
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 100, height: 100)
-                            .font(.system(size: 70))
-                            .foregroundStyle(.blue)
-                            .multilineTextAlignment(.center)
-                            .contentTransition(.symbolEffect(.replace))
-                            .onAppear(){
-                                animateSymbol = true
-                            }
+                        HStack{
+                            Text("Сегодня нет пар, можно отдыхать!")
+                                .font(.title)
+                                .multilineTextAlignment(.center)
+                            Spacer()
+                            Image(systemName: animateSymbol ? "calendar.badge.checkmark" : "calendar")
+                                .symbolEffect(.bounce.up.byLayer, value: animateSymbol)
+                                .aspectRatio(contentMode: .fit)
+    //                            .frame(width: 100, height: 100)
+                                .font(.system(size: 70))
+                                .foregroundStyle(.blue)
+                                .multilineTextAlignment(.center)
+                                .contentTransition(.symbolEffect(.replace))
+                                .onAppear(){
+                                    animateSymbol = true
+                                }
+                        }
                     }
                     .multilineTextAlignment(.center)
                 } else{
