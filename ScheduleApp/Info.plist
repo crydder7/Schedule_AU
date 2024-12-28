@@ -5,6 +5,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>/Roboto-Black.ttf</string>
+		<string>/college-condensed.ttf</string>
 	</array>
 </dict>
 </plist>

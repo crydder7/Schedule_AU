@@ -25,7 +25,7 @@ struct ScheduleTableView: View {
         } else{
             Table(of: WeekDays.self) {
                 TableColumn("Lessons") { day in
-                    Text("Group: \(group) - \(day.dayOfWeek)")
+                    Text("GROUP: \(group) - \(day.dayOfWeek.uppercased())")
                         .font(.title2)
                         .fontWeight(.bold)
                     if day.lessons.isEmpty {
@@ -69,6 +69,7 @@ struct ScheduleTableView: View {
             .tableStyle(.inset)
             .contentTransition(.identity)
             .transition(.slide)
+            .background(in: .rect(cornerRadius: 10))
         }
     }
 }
