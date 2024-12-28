@@ -7,6 +7,7 @@ struct ScheduleListView: View {
     @Binding var pickedDay: String
     @State var textColor: [Color] = [.blue, .red]
     @State var isVariable: Bool = false
+    @State var animateSymbol: Bool = false
     
     var body: some View {
         
@@ -34,15 +35,17 @@ struct ScheduleListView: View {
                             .foregroundStyle(.black)
                             .multilineTextAlignment(.center)
                         
-                        
-                        Image(systemName: "calendar")
-//                            .symbolEffect(.bounce.up.byLayer, options: .nonRepeating)
+                        Image(systemName: animateSymbol ? "calendar.badge.checkmark" : "calendar")
+                            .symbolEffect(.bounce.up.byLayer, options: .nonRepeating)
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 100, height: 100)
                             .font(.system(size: 70))
                             .foregroundStyle(.blue)
                             .multilineTextAlignment(.center)
                             .contentTransition(.symbolEffect(.replace))
+                            .onAppear(){
+                                animateSymbol = true
+                            }
                     }
                     .multilineTextAlignment(.center)
                 } else{

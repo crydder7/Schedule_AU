@@ -3,6 +3,7 @@ import SwiftUI
 struct ScheduleView: View {
     let dateForm = DateFormatter()
     private var groups = ["101.1","101.2","102.1","102.2","201.1","201.2","202","301.1","301.2","301.3","302","401.1","401.2","402.1","402.2"]
+    private var styles = ["List", "Table"]
     @State private var pickedGroup: String = "101.1"
     @State private var pickedDate: Date = Date()
     @State var fullSchedule: ScheduleFull?
@@ -15,6 +16,7 @@ struct ScheduleView: View {
     @State var group: String = ""
     @State var weekDays: [WeekDays] = []
     @State var pickedDay: String = ""
+    @State var scheduleStyle: String = "List"
     
     var body: some View {
         VStack{
@@ -33,16 +35,26 @@ struct ScheduleView: View {
                 
                 Toggle("Показать расписание на всю неделю 🗓️", isOn: $fullDates)
                 
+                Picker(selection: $scheduleStyle) {
+                    ForEach(styles, id: \.self){ style in
+                        Text(style)
+                    }
+                } label: {
+                    Text("")
+                }
+                .animation(.snappy, value: scheduleStyle)
+                .pickerStyle(.segmented)
+                
                 Button {
                     weekDays = []
                     pickedDay = ""
                     group = ""
                     pickedSchedule = []
                     isLoad = true
-                    let data = readLocalJSONFile(forName: "zxc")
-                    let zxc = parse(jsonData: data!)
-                    guard let zxc = zxc else { showAlert = true; return }
-                    fullSchedule = zxc
+                    let data = readLocalJSONFile(forName: "schedule")
+                    let _schedule = parse(jsonData: data!)
+                    guard let _schedule = _schedule else { showAlert = true; return }
+                    fullSchedule = _schedule
                     if fullDates{
                         isScrollable = false
                         for i in fullSchedule!.schedule{
@@ -83,18 +95,18 @@ struct ScheduleView: View {
                 })
                 .shadow(radius: 3)
                 .buttonStyle(.borderedProminent)
-                
-                
+
             }
-            .frame(height: UIScreen.main.bounds.height / 3.5)
+            .frame(height: UIScreen.main.bounds.height / 3)
             .background(.purple, in: .rect(cornerRadius: 10))
             .shadow(radius: 5)
             .scrollContentBackground(.hidden)
             .scrollDisabled(true)
             
-//                    ProgressView()
-//                        .progressViewStyle(.circular)
-
+//            ProgressView()
+//                .progressViewStyle(.circular)
+            
+            if scheduleStyle == "List"{
                 ScheduleListView(group: $group, weekDays: $weekDays, pickedDay: $pickedDay)
                     .frame(width: UIScreen.main.bounds.width)
                     .scrollDisabled(isScrollable)
@@ -102,7 +114,15 @@ struct ScheduleView: View {
                     .animation(.bouncy, value: animate)
                     .scrollContentBackground(.hidden)
                     .shadow(radius: 5)
-            
+            } else if scheduleStyle == "Table"{
+                ScheduleTableView(weekDays: $weekDays, pickedDay: $pickedDay, group: $group)
+                    .frame(width: UIScreen.main.bounds.width)
+                    .scrollDisabled(isScrollable)
+                    .clipped()
+                    .animation(.bouncy, value: animate)
+                    .scrollContentBackground(.hidden)
+                    .shadow(radius: 5)
+            }
         }
         .transition(.slide)
     }
