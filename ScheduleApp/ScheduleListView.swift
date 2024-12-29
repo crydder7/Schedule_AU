@@ -1,53 +1,81 @@
-//
-//  ScheduleListView.swift
-//  ScheduleApp
-//
-//  Created by lonely. on 12/24/24.
-//
-
-
 import SwiftUI
 import EventKit
 
 struct ScheduleListView: View {
-    @Binding var pickedSchedule: [Schedule]
+    @Binding var group: String
+    @Binding var weekDays: [WeekDays]
+    @Binding var pickedDay: String
+    @State var textColor: [Color] = [.blue, .red]
+    @State var isVariable: Bool = false
+    @State var animateSymbol: Bool = false
+    
     var body: some View {
-        List(pickedSchedule) { schedule in
-            Section(header: Text("Group \(schedule.group) - \(schedule.weekDay.capitalized)").foregroundStyle(.black)) {
-                ForEach(Array(zip(schedule.lessons, schedule.times)), id: \.0) { lesson, time in
-                    HStack {
-                        Text(lesson)
-                        Spacer()
-                        Text(time)
+        
+        if weekDays.isEmpty{
+            VStack{
+                Spacer()
+                HStack{
+                    Spacer()
+                    Text("Выберете день и группу")
+                        .foregroundStyle(.black)
+                        .font(.title)
+                    Spacer()
+                }
+                Spacer()
+            }
+            .background(.blue, in: .rect(cornerRadius: 10))
+            .transition(.slide)
+            .padding()
+        } else{
+            List(weekDays) { weekDay in
+                if weekDay.lessons.isEmpty{
+                    Section("Group: \(group) - \(weekDay.dayOfWeek.uppercased())"){
+                        HStack{
+                            Text("Сегодня нет пар, можно отдыхать!")
+                                .font(.title)
+                                .multilineTextAlignment(.center)
+                            Spacer()
+                            Image(systemName: animateSymbol ? "calendar.badge.checkmark" : "calendar")
+                                .symbolEffect(.bounce.up.byLayer, value: animateSymbol)
+                                .aspectRatio(contentMode: .fit)
+    //                            .frame(width: 100, height: 100)
+                                .font(.system(size: 70))
+                                .foregroundStyle(.blue)
+                                .multilineTextAlignment(.center)
+                                .contentTransition(.symbolEffect(.replace))
+                                .onAppear(){
+                                    animateSymbol = true
+                                }
+                        }
                     }
-                    .contextMenu(menuItems: {
-                        ForEach(Array(zip(schedule.lessons, schedule.teachers)), id: \.0){ l, teacher in
-                            if l==lesson {
-                                Text("Преподаватель:\(teacher)")
-                                
+                    .multilineTextAlignment(.center)
+                } else{
+                    Section("Group: \(group) - \(weekDay.dayOfWeek.uppercased())"){
+                        ForEach(weekDay.lessons) {lesson in
+                            HStack{
+                                Text(lesson.name)
+                                Spacer()
+                                Text(lesson.time)
+                            }
+                            .contextMenu {
+                                Text("Аудитория: \(lesson.room)").foregroundColor(.red)
+                                Divider()
+                                Text("Преподаватель: \(lesson.teacher)").foregroundColor(.blue)
+                                Divider()
+                                Text("Время: \(lesson.fullTime)").foregroundStyle(.green)
                             }
                         }
-                        Divider()
-                        ForEach(Array(zip(schedule.lessons, schedule.fullTimes)), id: \.0){ l, fullTime in
-                            if l==lesson {
-                                Text("Время:\(fullTime)")
-                                
-                            }
-                        }
-                        Divider()
-                        ForEach(Array(zip(schedule.lessons, schedule.rooms)), id: \.0){ l, room in
-                            if l==lesson {
-                                Text("Аудитория:\(room)")
-                                
-                            }
-                        }
-                    }).buttonStyle(.borderedProminent)
-                        .transition(.slide)
-                    .frame(minHeight: 30)
+                    }
                 }
             }
+            .background(.blue, in: .rect(cornerRadius: 10))
+            .listStyle(InsetGroupedListStyle())
+            .contentTransition(.identity)
+            .transition(.slide)
         }
-        .backgroundStyle(.white)
-        .listStyle(InsetGroupedListStyle())
     }
 }
+
+//#Preview {
+//    ScheduleListView(lessons: , group: , weekDay: )
+//}

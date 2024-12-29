@@ -8,6 +8,7 @@ struct InfoView: View {
     let smallWidth = UIScreen.main.bounds.width - 100
     let bigHeight = UIScreen.main.bounds.height / 5
     let bigWidth = UIScreen.main.bounds.width - 70
+    
     var body: some View {
         VStack{
             Image("au_gold")
@@ -22,12 +23,14 @@ struct InfoView: View {
                         .frame(width: UIScreen.main.bounds.width - 70, height: UIScreen.main.bounds.height / 5)
                         .foregroundStyle(LinearGradient(colors: gradientColors, startPoint: .bottomTrailing, endPoint: .topLeading))
                         .shadow(radius: 5)
+                        .blur(radius: 1)
                     RoundedRectangle(cornerRadius: 12)
                         .frame(width: UIScreen.main.bounds.width - 100, height: UIScreen.main.bounds.height / 6)
                         .foregroundStyle(LinearGradient(colors: gradientColors, startPoint: .topLeading, endPoint: .bottomTrailing))
                         .shadow(radius: 5)
 //                        .border(Color.black, width: 1)
                         .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                        .blur(radius: 1)
                         
                     HStack{
                         Image("telegram")
