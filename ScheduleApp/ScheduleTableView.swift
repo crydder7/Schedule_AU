@@ -64,7 +64,6 @@ struct ScheduleTableView: View {
                     TableRow(day)
                 }
             }
-            .background(.blue, in: .rect(cornerRadius: 10))
             .tableColumnHeaders(.visible)
             .tableStyle(.inset)
             .contentTransition(.identity)
