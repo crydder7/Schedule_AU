@@ -1,5 +1,6 @@
 import SwiftUI
 import EventKit
+import SwiftData
 
 struct ScheduleListView: View {
     @Binding var group: String
@@ -8,6 +9,7 @@ struct ScheduleListView: View {
     @State var textColor: [Color] = [.blue, .red]
     @State var isVariable: Bool = false
     @State var animateSymbol: Bool = false
+    @Environment(\.modelContext) private var context
     
     var body: some View {
         
@@ -69,7 +71,7 @@ struct ScheduleListView: View {
                 }
             }
             .background(.blue, in: .rect(cornerRadius: 10))
-            .listStyle(InsetGroupedListStyle())
+            .listStyle(.insetGrouped)
             .contentTransition(.identity)
             .transition(.slide)
         }

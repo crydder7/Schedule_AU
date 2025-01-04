@@ -1,5 +1,6 @@
 import Foundation
 import EventKit
+import SwiftData
 
 class CalendarManager: ObservableObject {
     let eventStore = EKEventStore()
@@ -56,4 +57,14 @@ struct Lesson: Decodable, Identifiable{
     var fullTime: String
     var teacher: String
     private enum CodingKeys : String, CodingKey { case name, room, time, fullTime, teacher}
+}
+
+@Model
+final class Note{
+    @Attribute(.unique) var id: String
+    var text: String
+    init(id: String, text: String) {
+        self.id = id
+        self.text = text
+    }
 }
