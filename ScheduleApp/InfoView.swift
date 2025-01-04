@@ -12,7 +12,8 @@ struct InfoView: View {
     var body: some View {
         VStack{
             Image("au_gold")
-                .shadow(color:.black,radius: 7)
+                .aspectRatio(contentMode: .fit)
+                .shadow(radius: 7)
             Text("Если у вас возникли вопросы или предложения, то обращайтесь в телеграм!")
                 .font(.headline)
                 .multilineTextAlignment(.center)
