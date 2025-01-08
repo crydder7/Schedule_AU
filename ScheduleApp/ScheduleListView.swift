@@ -14,20 +14,7 @@ struct ScheduleListView: View {
     var body: some View {
         
         if weekDays.isEmpty{
-            VStack{
-                Spacer()
-                HStack{
-                    Spacer()
-                    Text("Выберете день и группу 🧑‍🏫")
-                        .foregroundStyle(.black)
-                        .font(.title)
-                    Spacer()
-                }
-                Spacer()
-            }
-            .background(.blue, in: .rect(cornerRadius: 10))
-            .transition(.slide)
-            .padding()
+            PickGroupView()
         } else{
             List(weekDays) { weekDay in
                 if weekDay.lessons.isEmpty{
@@ -71,6 +58,7 @@ struct ScheduleListView: View {
                 }
             }
             .listStyle(.insetGrouped)
+            .contentTransition(.identity)
             .transition(.slide)
             .background(.blue, in: .rect(cornerRadius: 10))
         }

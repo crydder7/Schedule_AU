@@ -8,20 +8,7 @@ struct ScheduleTableView: View {
     
     var body: some View {
         if weekDays.isEmpty{
-            VStack{
-                Spacer()
-                HStack{
-                    Spacer()
-                    Text("Выберете день и группу 🧑‍🏫")
-                        .foregroundStyle(.black)
-                        .font(.title)
-                    Spacer()
-                }
-                Spacer()
-            }
-            .background(.blue, in: .rect(cornerRadius: 10))
-            .transition(.slide)
-            .padding()
+            PickGroupView()
         } else{
             ZStack{
                 RoundedRectangle(cornerRadius: 10)
@@ -72,8 +59,8 @@ struct ScheduleTableView: View {
                 .clipShape(.rect(cornerRadius: 10))
                 .padding()
             }
-            .transition(.slide)
             .contentTransition(.identity)
+            .transition(.slide)
         }
     }
 }
