@@ -90,6 +90,7 @@ struct ScheduleView: View {
                 } label: {
                     Text("Показать расписание 📅")
                 }
+                .frame(maxWidth:.infinity)
                 .alert("Something wrong", isPresented: $showAlert, actions: {
                     Button {
                         
@@ -99,7 +100,7 @@ struct ScheduleView: View {
                     
                 })
                 .scaleEffect(scaleButton ? 0.85 : 1)
-                .animation(.bouncy, value: scaleButton)
+                .animation(.bouncy(duration: 0.17), value: scaleButton)
                 .shadow(radius: 3)
                 .buttonStyle(.borderedProminent)
 

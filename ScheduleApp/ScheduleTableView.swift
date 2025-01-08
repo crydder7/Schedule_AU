@@ -12,7 +12,7 @@ struct ScheduleTableView: View {
                 Spacer()
                 HStack{
                     Spacer()
-                    Text("Выберете день и группу")
+                    Text("Выберете день и группу 🧑‍🏫")
                         .foregroundStyle(.black)
                         .font(.title)
                     Spacer()
@@ -69,10 +69,11 @@ struct ScheduleTableView: View {
                 }
                 .tableColumnHeaders(.visible)
                 .tableStyle(.inset)
-                .contentTransition(.identity)
-                .transition(.slide)
                 .clipShape(.rect(cornerRadius: 10))
+                .padding()
             }
+            .transition(.slide)
+            .contentTransition(.identity)
         }
     }
 }

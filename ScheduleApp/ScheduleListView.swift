@@ -18,7 +18,7 @@ struct ScheduleListView: View {
                 Spacer()
                 HStack{
                     Spacer()
-                    Text("Выберете день и группу")
+                    Text("Выберете день и группу 🧑‍🏫")
                         .foregroundStyle(.black)
                         .font(.title)
                     Spacer()
@@ -40,7 +40,6 @@ struct ScheduleListView: View {
                             Image(systemName: animateSymbol ? "calendar.badge.checkmark" : "calendar")
                                 .symbolEffect(.bounce.up.byLayer, value: animateSymbol)
                                 .aspectRatio(contentMode: .fit)
-    //                            .frame(width: 100, height: 100)
                                 .font(.system(size: 70))
                                 .foregroundStyle(.blue)
                                 .multilineTextAlignment(.center)
@@ -68,12 +67,12 @@ struct ScheduleListView: View {
                             }
                         }
                     }
+                    .multilineTextAlignment(.center)
                 }
             }
-            .background(.blue, in: .rect(cornerRadius: 10))
             .listStyle(.insetGrouped)
-            .contentTransition(.identity)
             .transition(.slide)
+            .background(.blue, in: .rect(cornerRadius: 10))
         }
     }
 }
