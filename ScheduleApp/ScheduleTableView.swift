@@ -60,7 +60,7 @@ struct ScheduleTableView: View {
                 .padding()
             }
             .contentTransition(.identity)
-            .transition(.slide)
+            .transition(.blurReplace)
         }
     }
 }

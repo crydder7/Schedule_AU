@@ -59,7 +59,7 @@ struct ScheduleListView: View {
             }
             .listStyle(.insetGrouped)
             .contentTransition(.identity)
-            .transition(.slide)
+            .transition(.blurReplace)
             .background(.blue, in: .rect(cornerRadius: 10))
         }
     }

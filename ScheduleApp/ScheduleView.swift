@@ -48,7 +48,7 @@ struct ScheduleView: View {
                 
                 Button {
                     scaleButton = true
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                         scaleButton = false
                     }
                     weekDays = []
@@ -100,7 +100,7 @@ struct ScheduleView: View {
                     
                 })
                 .scaleEffect(scaleButton ? 0.85 : 1)
-                .animation(.bouncy(duration: 0.17), value: scaleButton)
+                .animation(.bouncy(duration: 0.27), value: scaleButton)
                 .shadow(radius: 3)
                 .buttonStyle(.borderedProminent)
 
@@ -132,6 +132,7 @@ struct ScheduleView: View {
                     .shadow(radius: 5)
             }
         }
+        .backgroundStyle(.black)
         .transition(.slide)
     }
 }

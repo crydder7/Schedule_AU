@@ -15,7 +15,7 @@ struct PickGroupView: View {
         }
         .padding()
         .background(.blue, in: .rect(cornerRadius: 10))
-        .transition(.slide)
+        .transition(.blurReplace)
     }
 }
 

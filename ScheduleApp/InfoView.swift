@@ -63,6 +63,7 @@ struct InfoView: View {
                     .padding()
                 }
             }
+            .backgroundStyle(.black)
             .transition(.slide)
             .padding()
         }
