@@ -25,6 +25,7 @@ struct ScheduleTableView: View {
                                     .multilineTextAlignment(.center)
                                 Spacer()
                                 Image(systemName: animateSymbol ? "calendar.badge.checkmark" : "calendar")
+                                    .renderingMode(.template)
     //                                .symbolEffect(.bounce.up.byLayer, options: .nonRepeating)
                                     .symbolEffect(.bounce.up.byLayer, value: animateSymbol)
     //                                .aspectRatio(contentMode: .fit)
@@ -60,7 +61,7 @@ struct ScheduleTableView: View {
                 .padding()
             }
             .contentTransition(.identity)
-            .transition(.blurReplace)
+            .transition(.scale)
         }
     }
 }

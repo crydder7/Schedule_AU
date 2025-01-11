@@ -19,7 +19,7 @@ struct TabsView: View {
 
         }
         .tabViewStyle(.sidebarAdaptable)
-        .animation(.snappy, value: picked)
+        .animation(.smooth)
     }
 }
 

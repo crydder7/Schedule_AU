@@ -64,7 +64,7 @@ struct InfoView: View {
                 }
             }
             .backgroundStyle(.black)
-            .transition(.slide)
+            .transition(.blurReplace)
             .padding()
         }
     }
