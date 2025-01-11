@@ -1,5 +1,6 @@
 import SwiftUI
 import EventKit
+import SwiftData
 
 struct ScheduleListView: View {
     @Binding var group: String
@@ -8,24 +9,12 @@ struct ScheduleListView: View {
     @State var textColor: [Color] = [.blue, .red]
     @State var isVariable: Bool = false
     @State var animateSymbol: Bool = false
+    @Environment(\.modelContext) private var context
     
     var body: some View {
         
         if weekDays.isEmpty{
-            VStack{
-                Spacer()
-                HStack{
-                    Spacer()
-                    Text("Выберете день и группу")
-                        .foregroundStyle(.black)
-                        .font(.title)
-                    Spacer()
-                }
-                Spacer()
-            }
-            .background(.blue, in: .rect(cornerRadius: 10))
-            .transition(.slide)
-            .padding()
+            PickGroupView()
         } else{
             List(weekDays) { weekDay in
                 if weekDay.lessons.isEmpty{
@@ -36,9 +25,9 @@ struct ScheduleListView: View {
                                 .multilineTextAlignment(.center)
                             Spacer()
                             Image(systemName: animateSymbol ? "calendar.badge.checkmark" : "calendar")
+                                .renderingMode(.template)
                                 .symbolEffect(.bounce.up.byLayer, value: animateSymbol)
                                 .aspectRatio(contentMode: .fit)
-    //                            .frame(width: 100, height: 100)
                                 .font(.system(size: 70))
                                 .foregroundStyle(.blue)
                                 .multilineTextAlignment(.center)
@@ -66,12 +55,13 @@ struct ScheduleListView: View {
                             }
                         }
                     }
+                    .multilineTextAlignment(.center)
                 }
             }
+            .listStyle(.insetGrouped)
             .background(.blue, in: .rect(cornerRadius: 10))
-            .listStyle(InsetGroupedListStyle())
             .contentTransition(.identity)
-            .transition(.slide)
+            .transition(.scale)
         }
     }
 }

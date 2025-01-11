@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct ScheduleAppApp: App {
+    
     var body: some Scene {
         WindowGroup {
-            TabsView()
+            LaunchScreenView()
         }
+        .modelContainer(for: Note.self)
     }
 }

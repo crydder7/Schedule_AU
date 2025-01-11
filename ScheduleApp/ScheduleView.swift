@@ -17,6 +17,7 @@ struct ScheduleView: View {
     @State var weekDays: [WeekDays] = []
     @State var pickedDay: String = ""
     @State var scheduleStyle: String = "List"
+    @State var scaleButton: Bool = false
     
     var body: some View {
         VStack{
@@ -46,6 +47,10 @@ struct ScheduleView: View {
                 .pickerStyle(.segmented)
                 
                 Button {
+                    scaleButton = true
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                        scaleButton = false
+                    }
                     weekDays = []
                     pickedDay = ""
                     group = ""
@@ -85,6 +90,7 @@ struct ScheduleView: View {
                 } label: {
                     Text("Показать расписание 📅")
                 }
+                .frame(maxWidth:.infinity)
                 .alert("Something wrong", isPresented: $showAlert, actions: {
                     Button {
                         
@@ -93,6 +99,8 @@ struct ScheduleView: View {
                     }
                     
                 })
+                .scaleEffect(scaleButton ? 0.85 : 1)
+                .animation(.bouncy(duration: 0.27), value: scaleButton)
                 .shadow(radius: 3)
                 .buttonStyle(.borderedProminent)
 
@@ -124,6 +132,7 @@ struct ScheduleView: View {
                     .shadow(radius: 5)
             }
         }
+        .backgroundStyle(.black)
         .transition(.slide)
     }
 }
