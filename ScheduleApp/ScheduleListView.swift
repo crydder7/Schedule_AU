@@ -47,11 +47,11 @@ struct ScheduleListView: View {
                                 Text(lesson.time)
                             }
                             .contextMenu {
-                                Text("Аудитория: \(lesson.room)").foregroundColor(.red)
+                                Label(lesson.room, systemImage: "location.fill")
                                 Divider()
-                                Text("Преподаватель: \(lesson.teacher)").foregroundColor(.blue)
+                                Label(lesson.teacher, systemImage: "person.fill")
                                 Divider()
-                                Text("Время: \(lesson.fullTime)").foregroundStyle(.green)
+                                Label(lesson.fullTime, systemImage: "clock.fill")
                             }
                         }
                     }
