@@ -16,7 +16,6 @@ struct TabsView: View {
             Tab("Info", systemImage: "info.circle.fill", value: 1) {
                InfoView()
             }
-
         }
         .tabViewStyle(.sidebarAdaptable)
         .animation(.smooth)
