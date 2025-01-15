@@ -8,12 +8,29 @@ struct InfoView: View {
     let smallWidth = UIScreen.main.bounds.width - 100
     let bigHeight = UIScreen.main.bounds.height / 5
     let bigWidth = UIScreen.main.bounds.width - 70
+    @State private var favGroup: String = UserDefaults.standard.string(forKey: "favGroup") ?? "101.1"
+    private var groups = ["101.1","101.2","102.1","102.2","201.1","201.2","202","301.1","301.2","301.3","302","401.1","401.2","402.1","402.2"]
+    @State var scale: CGFloat = 1
     
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 10)
                 .foregroundStyle(LinearGradient(colors: [.blue,.purple], startPoint: .topLeading, endPoint: .bottomTrailing))
             VStack{
+                Form{
+                    Picker(selection: $favGroup) {
+                        ForEach(groups, id: \.self){ i in
+                            Text(i)
+                        }
+                    } label: {
+                        Text("Выберете группу по-умолачнию")
+                    }
+                    .pickerStyle(.menu)
+                    .onChange(of: favGroup) {
+                        UserDefaults.standard.set(favGroup, forKey: "favGroup")
+                    }
+                }
+                .scrollContentBackground(.hidden)
                 Image("au_gold")
                     .aspectRatio(contentMode: .fit)
                     .shadow(radius: 10)

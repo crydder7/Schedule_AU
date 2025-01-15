@@ -4,7 +4,7 @@ struct ScheduleView: View {
     let dateForm = DateFormatter()
     private var groups = ["101.1","101.2","102.1","102.2","201.1","201.2","202","301.1","301.2","301.3","302","401.1","401.2","402.1","402.2"]
     private var styles = ["List", "Table"]
-    @State private var pickedGroup: String = "101.1"
+    @State private var pickedGroup: String = UserDefaults.standard.string(forKey: "favGroup") ?? "101.1"
     @State private var pickedDate: Date = Date()
     @State var fullSchedule: ScheduleFull?
     @State var pickedSchedule: [Schedule] = []
@@ -113,23 +113,26 @@ struct ScheduleView: View {
             
 //            ProgressView()
 //                .progressViewStyle(.circular)
-            
-            if scheduleStyle == "List"{
-                ScheduleListView(group: $group, weekDays: $weekDays, pickedDay: $pickedDay)
-                    .frame(width: UIScreen.main.bounds.width)
-                    .scrollDisabled(isScrollable)
-                    .clipped()
-                    .animation(.bouncy, value: animate)
-                    .scrollContentBackground(.hidden)
-                    .shadow(radius: 5)
-            } else if scheduleStyle == "Table"{
-                ScheduleTableView(weekDays: $weekDays, pickedDay: $pickedDay, group: $group)
-                    .frame(width: UIScreen.main.bounds.width)
-                    .scrollDisabled(isScrollable)
-                    .clipped()
-                    .animation(.bouncy, value: animate)
-                    .scrollContentBackground(.hidden)
-                    .shadow(radius: 5)
+            if weekDays.isEmpty{
+                PickGroupView()
+            } else {
+                if scheduleStyle == "List"{
+                    ScheduleListView(group: $group, weekDays: $weekDays, pickedDay: $pickedDay)
+                        .frame(width: UIScreen.main.bounds.width)
+                        .scrollDisabled(isScrollable)
+                        .clipped()
+                        .animation(.bouncy, value: animate)
+                        .scrollContentBackground(.hidden)
+                        .shadow(radius: 5)
+                } else if scheduleStyle == "Table"{
+                    ScheduleTableView(weekDays: $weekDays, pickedDay: $pickedDay, group: $group)
+                        .frame(width: UIScreen.main.bounds.width)
+                        .scrollDisabled(isScrollable)
+                        .clipped()
+                        .animation(.bouncy, value: animate)
+                        .scrollContentBackground(.hidden)
+                        .shadow(radius: 5)
+                }
             }
         }
         .backgroundStyle(.black)
