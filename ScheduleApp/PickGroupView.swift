@@ -8,7 +8,8 @@ struct PickGroupView: View {
                 Spacer()
                 Text("Выберете день и группу 🧑‍🏫")
                     .foregroundStyle(.black)
-                    .font(.title)
+                    .font(.custom("Roboto-Medium", size: 30))
+                    
                 Spacer()
             }
             Spacer()

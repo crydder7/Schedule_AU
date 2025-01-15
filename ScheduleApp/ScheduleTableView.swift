@@ -7,9 +7,6 @@ struct ScheduleTableView: View {
     @State var animateSymbol: Bool = false
     
     var body: some View {
-        if weekDays.isEmpty{
-            PickGroupView()
-        } else{
             ZStack{
                 RoundedRectangle(cornerRadius: 10)
                     .foregroundStyle(.blue)
@@ -62,7 +59,6 @@ struct ScheduleTableView: View {
             }
             .contentTransition(.identity)
             .transition(.scale)
-        }
     }
 }
 

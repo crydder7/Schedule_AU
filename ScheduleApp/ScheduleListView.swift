@@ -12,10 +12,6 @@ struct ScheduleListView: View {
     @Environment(\.modelContext) private var context
     
     var body: some View {
-        
-        if weekDays.isEmpty{
-            PickGroupView()
-        } else{
             List(weekDays) { weekDay in
                 if weekDay.lessons.isEmpty{
                     Section("Group: \(group) - \(weekDay.dayOfWeek.uppercased())"){
@@ -62,7 +58,6 @@ struct ScheduleListView: View {
             .background(.blue, in: .rect(cornerRadius: 10))
             .contentTransition(.identity)
             .transition(.scale)
-        }
     }
 }
 
