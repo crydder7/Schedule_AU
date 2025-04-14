@@ -1,376 +1,1390 @@
 {
-    "schedule":[
+    "schedule": [
         {
-            "group":"101.1",
-            "weekDays":[
+            "group": "101.1",
+            "weekDays": [
                 {
-                    "dayOfWeek":"monday",
-                    "lessons":[
+                    "dayOfWeek": "monday",
+                    "lessons": [
                         {
-                            "name":"Английский язык",
-                            "room":"412ФТШ",
-                            "time":"10:00",
-                            "fullTime":"10:00-11:30",
-                            "teacher":"-"
+                            "name": "Иняз",
+                            "room": "442ФТШ, 507ФТШ, 508ФТШ, 539ФТШ",
+                            "time": "10:00",
+                            "fullTime": "10:00-11:30",
+                            "teacher": "-"
                         },
                         {
-                            "name":"Мат.Анализ(л)",
-                            "room":"206СЛК",
-                            "time":"12:00",
-                            "fullTime":"12:00-13:30",
-                            "teacher":"Симонов С.А."
+                            "name": "Мат.анализ (лекция)",
+                            "room": "206СЛК",
+                            "time": "12:00",
+                            "fullTime": "12:00-13:30",
+                            "teacher": "Симонов С.А."
                         },
                         {
-                            "name":"Мат.Анализ(п)",
-                            "room":"206СЛК",
-                            "time":"14:00",
-                            "fullTime":"14:00-15:30",
-                            "teacher":"Симонов С.А."
-                        },
-                        {
-                            "name":"Python(л) Ч/Н",
-                            "room":"305СЛК",
-                            "time":"16:00",
-                            "fullTime":"16:00-17:30",
-                            "teacher":"Устинов А.Б."
+                            "name": "Мат.анализ (практика)",
+                            "room": "313СЛК",
+                            "time": "15:00",
+                            "fullTime": "15:00-16:30",
+                            "teacher": "Симонов С.А."
                         }
                     ]
                 },
                 {
-                    "dayOfWeek":"tuesday",
-                    "lessons":[
+                    "dayOfWeek": "tuesday",
+                    "lessons": [
                         {
-                            "name":"Алгебра(л)",
-                            "room":"208СЛК",
-                            "time":"9:00",
-                            "fullTime":"9:00-11:30",
-                            "teacher":"Всемирнов М.А."
+                            "name": "Алгебра (лекция)",
+                            "room": "208СЛК",
+                            "time": "9:00",
+                            "fullTime": "9:00-10:30",
+                            "teacher": "Всемирнов М.А."
                         },
                         {
-                            "name":"Физкультура",
-                            "room":"Спорт.Комплекс",
-                            "time":"12:00",
-                            "fullTime":"12:00-13:30",
-                            "teacher":"-"
+                            "name": "Физ-ра",
+                            "room": "Спорт. Комплекс",
+                            "time": "12:00",
+                            "fullTime": "12:00-13:30",
+                            "teacher": "-"
                         },
                         {
-                            "name":"Алгебра(п)",
-                            "room":"313СЛК",
-                            "time":"14:00",
-                            "fullTime":"14:00-15:30",
-                            "teacher":"Голубь Н.И."
+                            "name": "Общая химия",
+                            "room": "206СЛК",
+                            "time": "14:00",
+                            "fullTime": "14:00-15:30",
+                            "teacher": "Вязьмин С.Ю."
                         },
                         {
-                            "name":"Адаптационный курс",
-                            "room":"204СЛК",
-                            "time":"16:00",
-                            "fullTime":"16:00-17:30",
-                            "teacher":"-"
+                            "name": "Общая химия",
+                            "room": "206СЛК",
+                            "time": "16:00",
+                            "fullTime": "16:00-17:30",
+                            "teacher": "Вязьмин С.Ю."
                         }
                     ]
                 },
                 {
-                    "dayOfWeek":"wednesday",
-                    "lessons":[
+                    "dayOfWeek": "wednesday",
+                    "lessons": [
                         {
-                            "name":"Физика(л)",
-                            "room":"206СЛК",
-                            "time":"10:00",
-                            "fullTime":"10:00-11:30",
-                            "teacher":"Полозков Р.Г."
+                            "name": "Физика (практика)",
+                            "room": "515СЛК",
+                            "time": "10:00",
+                            "fullTime": "10:00-11:30",
+                            "teacher": "Шупяцкий А.Г."
                         },
                         {
-                            "name":"Физика(п)",
-                            "room":"515СЛК",
-                            "time":"12:00",
-                            "fullTime":"12:00-13:30",
-                            "teacher":"Шупяцкий А.Г."
+                            "name": "Python",
+                            "room": "305СЛК",
+                            "time": "12:00",
+                            "fullTime": "12:00-13:30",
+                            "teacher": "Мсукар C."
                         },
                         {
-                            "name":"Общая химия",
-                            "room":"204СЛК",
-                            "time":"15:00",
-                            "fullTime":"14:00-16:30",
-                            "teacher":"Вязьмин С.Ю."
+                            "name": "Физика (лекция)",
+                            "room": "208СЛК",
+                            "time": "14:00",
+                            "fullTime": "14:00-15:30",
+                            "teacher": "Полозков Р.Г."
                         },
                         {
-                            "name":"Общая химия",
-                            "room":"204СЛК",
-                            "time":"17:00",
-                            "fullTime":"17:00-18:30",
-                            "teacher":"Вязьмин С.Ю."
+                            "name": "Теория и практика коммуникации",
+                            "room": "206Ф-в/",
+                            "time": "16:00",
+                            "fullTime": "16:00-17:30",
+                            "teacher": "Томилова М.И."
                         }
                     ]
                 },
                 {
-                    "dayOfWeek":"thursday",
-                    "lessons":[
+                    "dayOfWeek": "thursday",
+                    "lessons": [
                         {
-                            "name":"Физкультура",
-                            "room":"Спорт.Комплекс",
-                            "time":"10:00",
-                            "fullTime":"10:00-11:30",
-                            "teacher":"-"
+                            "name": "Физ-ра",
+                            "room": "Спорт. Комплекс",
+                            "time": "10:00",
+                            "fullTime": "10:00-11:30",
+                            "teacher": "-"
                         },
                         {
-                            "name":"БЖД",
-                            "room":"206СЛК",
-                            "time":"12:00",
-                            "fullTime":"12:00-13:30",
-                            "teacher":"Каверзнева Т.Т."
+                            "name": "Алгебра (практика)",
+                            "room": "313СЛК",
+                            "time": "12:00",
+                            "fullTime": "12:00-13:30",
+                            "teacher": "Голубь Н.И."
                         },
                         {
-                            "name":"ОРГ(л) // ОРГ(п)",
-                            "room":"422ФТШ",
-                            "time":"14:00",
-                            "fullTime":"14:00-15:30",
-                            "teacher":"Закрыжевский А.Г."
-                        },
-                        {
-                            "name":"ОРГ",
-                            "room":"422ФТШ",
-                            "time":"16:00",
-                            "fullTime":"16:00-17:30",
-                            "teacher":"Закрыжевский А.Г."
+                            "name": "Физика (лаб)",
+                            "room": "234ФТШ",
+                            "time": "14:00",
+                            "fullTime": "14:00-15:30",
+                            "teacher": "-"
                         }
                     ]
                 },
                 {
-                    "dayOfWeek":"friday",
-                    "lessons":[
+                    "dayOfWeek": "friday",
+                    "lessons": [
                         {
-                            "name":"Физика(л)",
-                            "room":"206СЛК",
-                            "time":"10:00",
-                            "fullTime":"10:00-11:30",
-                            "teacher":"Полозков Р.Г."
+                            "name": "Иняз",
+                            "room": "442ФТШ, 507ФТШ, 508ФТШ, 539ФТШ",
+                            "time": "10:00",
+                            "fullTime": "10:00-11:30",
+                            "teacher": "-"
                         },
                         {
-                            "name":"Физика(п)",
-                            "room":"515СЛК",
-                            "time":"12:00",
-                            "fullTime":"12:00-13:30",
-                            "teacher":"Шупяцкий А.Г."
+                            "name": "Физика (лекция)",
+                            "room": "206СЛК",
+                            "time": "12:00",
+                            "fullTime": "12:00-13:30",
+                            "teacher": "Полозков Р.Г."
                         },
                         {
-                            "name":"Физика(лаб)",
-                            "room":"234ФТШ",
-                            "time":"15:00",
-                            "fullTime":"15:00-17:30",
-                            "teacher":"-"
+                            "name": "Физика (практика)",
+                            "room": "515СЛК",
+                            "time": "14:00",
+                            "fullTime": "14:00-15:30",
+                            "teacher": "Шупяцкий А.Г."
                         }
                     ]
                 },
                 {
-                    "dayOfWeek":"saturday",
-                    "lessons":[
-                        {
-                            "name":"Английский язык",
-                            "room":"412ФТШ",
-                            "time":"10:00",
-                            "fullTime":"10:00-11:30",
-                            "teacher":"-"
-                        },
-                        {
-                            "name":"Python(п)",
-                            "room":"305СЛК",
-                            "time":"12:00",
-                            "fullTime":"12:00-13:30",
-                            "teacher":"Мсукар С."
-                        }
-                    ]
+                    "dayOfWeek": "saturday",
+                    "lessons": []
                 },
                 {
-                    "dayOfWeek":"sunday",
-                    "lessons":[
-                    ]
+                    "dayOfWeek": "sunday",
+                    "lessons": []
                 }
             ]
         },
         {
-            "group":"101.2",
-            "weekDays":[
+            "group": "101.2",
+            "weekDays": [
                 {
-                    "dayOfWeek":"monday",
-                    "lessons":[
+                    "dayOfWeek": "monday",
+                    "lessons": [
                         {
-                            "name":"Английский язык",
-                            "room":"412ФТШ",
-                            "time":"10:00",
-                            "fullTime":"10:00-11:30",
-                            "teacher":"-"
+                            "name": "Иняз",
+                            "room": "442ФТШ, 507ФТШ, 508ФТШ, 539ФТШ",
+                            "time": "10:00",
+                            "fullTime": "10:00-11:30",
+                            "teacher": "-"
                         },
                         {
-                            "name":"Мат.Анализ(л)",
-                            "room":"206СЛК",
-                            "time":"12:00",
-                            "fullTime":"12:00-13:30",
-                            "teacher":"Симонов С.А."
+                            "name": "Физика (практика)",
+                            "room": "515СЛК",
+                            "time": "14:00",
+                            "fullTime": "14:00-15:30",
+                            "teacher": "Шупяцкий А.Г."
                         },
                         {
-                            "name":"Мат.Анализ(п)",
-                            "room":"206СЛК",
-                            "time":"14:00",
-                            "fullTime":"14:00-15:30",
-                            "teacher":"Симонов С.А."
-                        },
-                        {
-                            "name":"Python(л) Ч/Н",
-                            "room":"305СЛК",
-                            "time":"16:00",
-                            "fullTime":"16:00-17:30",
-                            "teacher":"Устинов А.Б."
+                            "name": "Физика (лаб)",
+                            "room": "234ФТШ",
+                            "time": "16:00",
+                            "fullTime": "16:00-17:30",
+                            "teacher": "-"
                         }
                     ]
                 },
                 {
-                    "dayOfWeek":"tuesday",
-                    "lessons":[
+                    "dayOfWeek": "tuesday",
+                    "lessons": [
                         {
-                            "name":"Алгебра(л)",
-                            "room":"208СЛК",
-                            "time":"9:00",
-                            "fullTime":"9:00-11:30",
-                            "teacher":"Всемирнов М.А."
+                            "name": "Алгебра (практика)",
+                            "room": "313СЛК",
+                            "time": "12:00",
+                            "fullTime": "12:00-13:30",
+                            "teacher": "Голубь Н.И."
                         },
                         {
-                            "name":"Физкультура",
-                            "room":"Спорт.Комплекс",
-                            "time":"12:00",
-                            "fullTime":"12:00-13:30",
-                            "teacher":"-"
-                        },
-                        {
-                            "name":"Алгебра(п)",
-                            "room":"313СЛК",
-                            "time":"14:00",
-                            "fullTime":"14:00-15:30",
-                            "teacher":"Голубь Н.И."
-                        },
-                        {
-                            "name":"Адаптационный курс",
-                            "room":"204СЛК",
-                            "time":"16:00",
-                            "fullTime":"16:00-17:30",
-                            "teacher":"-"
+                            "name": "Мат.анализ (практика)",
+                            "room": "313СЛК",
+                            "time": "16:00",
+                            "fullTime": "16:00-17:30",
+                            "teacher": "Минарский А.М."
                         }
                     ]
                 },
                 {
-                    "dayOfWeek":"wednesday",
-                    "lessons":[
+                    "dayOfWeek": "wednesday",
+                    "lessons": [
                         {
-                            "name":"Физика(л)",
-                            "room":"206СЛК",
-                            "time":"10:00",
-                            "fullTime":"10:00-11:30",
-                            "teacher":"Полозков Р.Г."
+                            "name": "Python",
+                            "room": "305СЛК",
+                            "time": "12:00",
+                            "fullTime": "12:00-13:30",
+                            "teacher": "Мсукар C."
                         },
                         {
-                            "name":"Физика(п)",
-                            "room":"515СЛК",
-                            "time":"12:00",
-                            "fullTime":"12:00-13:30",
-                            "teacher":"Шупяцкий А.Г."
-                        },
-                        {
-                            "name":"Общая химия",
-                            "room":"204СЛК",
-                            "time":"15:00",
-                            "fullTime":"14:00-16:30",
-                            "teacher":"Вязьмин С.Ю."
-                        },
-                        {
-                            "name":"Общая химия",
-                            "room":"204СЛК",
-                            "time":"17:00",
-                            "fullTime":"17:00-18:30",
-                            "teacher":"Вязьмин С.Ю."
+                            "name": "Физика (практика)",
+                            "room": "515СЛК",
+                            "time": "14:00",
+                            "fullTime": "14:00-15:30",
+                            "teacher": "Шупяцкий А.Г."
                         }
                     ]
                 },
                 {
-                    "dayOfWeek":"thursday",
-                    "lessons":[
+                    "dayOfWeek": "thursday",
+                    "lessons": [
                         {
-                            "name":"Физкультура",
-                            "room":"Спорт.Комплекс",
-                            "time":"10:00",
-                            "fullTime":"10:00-11:30",
-                            "teacher":"-"
+                            "name": "Физ-ра",
+                            "room": "Спорт. Комплекс",
+                            "time": "10:00",
+                            "fullTime": "10:00-11:30",
+                            "teacher": "-"
                         },
                         {
-                            "name":"БЖД",
-                            "room":"206СЛК",
-                            "time":"12:00",
-                            "fullTime":"12:00-13:30",
-                            "teacher":"Каверзнева Т.Т."
-                        },
-                        {
-                            "name":"ОРГ(л) // ОРГ(п)",
-                            "room":"422ФТШ",
-                            "time":"14:00",
-                            "fullTime":"14:00-15:30",
-                            "teacher":"Закрыжевский А.Г."
-                        },
-                        {
-                            "name":"ОРГ",
-                            "room":"422ФТШ",
-                            "time":"16:00",
-                            "fullTime":"16:00-17:30",
-                            "teacher":"Закрыжевский А.Г."
+                            "name": "Физика (лаб)",
+                            "room": "234ФТШ",
+                            "time": "14:00",
+                            "fullTime": "14:00-15:30",
+                            "teacher": "-"
                         }
                     ]
                 },
                 {
-                    "dayOfWeek":"friday",
-                    "lessons":[
+                    "dayOfWeek": "friday",
+                    "lessons": [
                         {
-                            "name":"Физика(л)",
-                            "room":"206СЛК",
-                            "time":"10:00",
-                            "fullTime":"10:00-11:30",
-                            "teacher":"Полозков Р.Г."
-                        },
-                        {
-                            "name":"Физика(п)",
-                            "room":"515СЛК",
-                            "time":"12:00",
-                            "fullTime":"12:00-13:30",
-                            "teacher":"Шупяцкий А.Г."
-                        },
-                        {
-                            "name":"Физика(лаб)",
-                            "room":"234ФТШ",
-                            "time":"15:00",
-                            "fullTime":"15:00-17:30",
-                            "teacher":"-"
+                            "name": "Мат.анализ (практика)",
+                            "room": "313СЛК",
+                            "time": "15:00",
+                            "fullTime": "15:00-16:30",
+                            "teacher": "Минарский А.М."
                         }
                     ]
                 },
                 {
-                    "dayOfWeek":"saturday",
-                    "lessons":[
+                    "dayOfWeek": "saturday",
+                    "lessons": []
+                },
+                {
+                    "dayOfWeek": "sunday",
+                    "lessons": []
+                }
+            ]
+        },
+        {
+            "group": "102.1",
+            "weekDays": [
+                {
+                    "dayOfWeek": "monday",
+                    "lessons": [
                         {
-                            "name":"Английский язык",
-                            "room":"412ФТШ",
-                            "time":"10:00",
-                            "fullTime":"10:00-11:30",
-                            "teacher":"-"
+                            "name": "Иняз",
+                            "room": "445ФТШ, 540ФТШ, 523СЛК",
+                            "time": "10:00",
+                            "fullTime": "10:00-11:30",
+                            "teacher": "-"
                         },
                         {
-                            "name":"Python(п)",
-                            "room":"305СЛК",
-                            "time":"12:00",
-                            "fullTime":"12:00-13:30",
-                            "teacher":"Мсукар С."
+                            "name": "Физика (лаб)",
+                            "room": "234ФТШ",
+                            "time": "14:00",
+                            "fullTime": "14:00-15:30",
+                            "teacher": "-"
+                        },
+                        {
+                            "name": "Дискрет. Мат. (лекция)",
+                            "room": "204СЛК",
+                            "time": "15:00",
+                            "fullTime": "15:00-16:30",
+                            "teacher": "-"
+                        },
+                        {
+                            "name": "Дискрет. Мат. (практика)",
+                            "room": "204СЛК",
+                            "time": "16:00",
+                            "fullTime": "16:00-17:30",
+                            "teacher": "-"
                         }
                     ]
                 },
                 {
-                    "dayOfWeek":"sunday",
-                    "lessons":[
+                    "dayOfWeek": "tuesday",
+                    "lessons": [
+                        {
+                            "name": "Физика (практика)",
+                            "room": "515СЛК",
+                            "time": "12:00",
+                            "fullTime": "12:00-13:30",
+                            "teacher": "Шупяцкий А.Г."
+                        },
+                        {
+                            "name": "Python",
+                            "room": "305СЛК",
+                            "time": "14:00",
+                            "fullTime": "14:00-15:30",
+                            "teacher": "Устинов А.Б."
+                        }
                     ]
+                },
+                {
+                    "dayOfWeek": "wednesday",
+                    "lessons": [
+                        {
+                            "name": "Мат.анализ (практика)",
+                            "room": "515СЛК",
+                            "time": "14:00",
+                            "fullTime": "14:00-15:30",
+                            "teacher": "Михайлов А.С."
+                        },
+                        {
+                            "name": "Алгебра (практика)",
+                            "room": "516СЛК",
+                            "time": "16:00",
+                            "fullTime": "16:00-17:30",
+                            "teacher": "Ржонсницкий А.В."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "thursday",
+                    "lessons": [
+                        {
+                            "name": "Иняз",
+                            "room": "445ФТШ, 540ФТШ, 430СЛК",
+                            "time": "10:00",
+                            "fullTime": "10:00-11:30",
+                            "teacher": "-"
+                        },
+                        {
+                            "name": "Физика (практика)",
+                            "room": "515СЛК",
+                            "time": "14:00",
+                            "fullTime": "14:00-15:30",
+                            "teacher": "Шупяцкий А.Г."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "friday",
+                    "lessons": [
+                        {
+                            "name": "Мат.анализ (практика)",
+                            "room": "515СЛК",
+                            "time": "12:00",
+                            "fullTime": "12:00-13:30",
+                            "teacher": "Михайлов А.С."
+                        },
+                        {
+                            "name": "Физика (лаб)",
+                            "room": "234ФТШ",
+                            "time": "16:00",
+                            "fullTime": "16:00-17:30",
+                            "teacher": "-"
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "saturday",
+                    "lessons": []
+                },
+                {
+                    "dayOfWeek": "sunday",
+                    "lessons": []
+                }
+            ]
+        },
+        {
+            "group": "102.2",
+            "weekDays": [
+                {
+                    "dayOfWeek": "monday",
+                    "lessons": [
+                        {
+                            "name": "Python",
+                            "room": "305СЛК",
+                            "time": "14:00",
+                            "fullTime": "14:00-15:30",
+                            "teacher": "Устинов А.Б."
+                        },
+                        {
+                            "name": "Физика (практика)",
+                            "room": "516СЛК",
+                            "time": "16:00",
+                            "fullTime": "16:00-17:30",
+                            "teacher": "Богословский Н.А."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "tuesday",
+                    "lessons": [
+                        {
+                            "name": "Алгебра (практика)",
+                            "room": "516СЛК",
+                            "time": "12:00",
+                            "fullTime": "12:00-13:30",
+                            "teacher": "Ржонсницкий А.В."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "wednesday",
+                    "lessons": [
+                        {
+                            "name": "Физика (практика)",
+                            "room": "516СЛК",
+                            "time": "14:00",
+                            "fullTime": "14:00-15:30",
+                            "teacher": "Богословский Н.А."
+                        },
+                        {
+                            "name": "Мат.анализ (практика)",
+                            "room": "515СЛК",
+                            "time": "16:00",
+                            "fullTime": "16:00-17:30",
+                            "teacher": "Михайлов А.С."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "thursday",
+                    "lessons": [
+                        {
+                            "name": "Физика (лаб)",
+                            "room": "234ФТШ",
+                            "time": "14:00",
+                            "fullTime": "14:00-15:30",
+                            "teacher": "-"
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "friday",
+                    "lessons": [
+                        {
+                            "name": "Физика (практика)",
+                            "room": "516СЛК",
+                            "time": "16:00",
+                            "fullTime": "16:00-17:30",
+                            "teacher": "Богословский Н.А."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "saturday",
+                    "lessons": []
+                },
+                {
+                    "dayOfWeek": "sunday",
+                    "lessons": []
+                }
+            ]
+        },
+        {
+            "group": "201.1",
+            "weekDays": [
+                {
+                    "dayOfWeek": "monday",
+                    "lessons": [
+                        {
+                            "name": "Мат.анализ (лекция)",
+                            "room": "208СЛК",
+                            "time": "10:00",
+                            "fullTime": "10:00-11:30",
+                            "teacher": "Жуков И.Б."
+                        },
+                        {
+                            "name": "Иняз",
+                            "room": "442ФТШ, 507ФТШ, 508ФТШ",
+                            "time": "12:00",
+                            "fullTime": "12:00-13:30",
+                            "teacher": "-"
+                        },
+                        {
+                            "name": "Электродинамика (лекция)",
+                            "room": "206СЛК",
+                            "time": "16:00",
+                            "fullTime": "16:00-17:30",
+                            "teacher": "Платонов К.Ю."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "tuesday",
+                    "lessons": [
+                        {
+                            "name": "Физ-ра",
+                            "room": "Спорт. Комплекс",
+                            "time": "9:00",
+                            "fullTime": "9:00-10:30",
+                            "teacher": "-"
+                        },
+                        {
+                            "name": "Матфизика (лекция)",
+                            "room": "208СЛК",
+                            "time": "12:00",
+                            "fullTime": "12:00-13:30",
+                            "teacher": "Васильчук В.Ю."
+                        },
+                        {
+                            "name": "Электродинамика (практика)",
+                            "room": "515СЛК",
+                            "time": "14:00",
+                            "fullTime": "14:00-15:30",
+                            "teacher": "Крайнов И.В."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "wednesday",
+                    "lessons": [
+                        {
+                            "name": "Матфизика (практика)",
+                            "room": "522СЛК",
+                            "time": "10:00",
+                            "fullTime": "10:00-11:30",
+                            "teacher": "Нежинская И.В."
+                        },
+                        {
+                            "name": "Мат.анализ (практика)",
+                            "room": "313СЛК",
+                            "time": "12:00",
+                            "fullTime": "12:00-13:30",
+                            "teacher": "Демченко М.Н."
+                        },
+                        {
+                            "name": "Физика (практика)",
+                            "room": "518СЛК",
+                            "time": "14:00",
+                            "fullTime": "14:00-15:30",
+                            "teacher": "Ефремова Е.А."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "thursday",
+                    "lessons": [
+                        {
+                            "name": "Физ-ра",
+                            "room": "Спорт. Комплекс",
+                            "time": "10:00",
+                            "fullTime": "10:00-11:30",
+                            "teacher": "-"
+                        },
+                        {
+                            "name": "Введение в специальность",
+                            "room": "206СЛК",
+                            "time": "12:00",
+                            "fullTime": "12:00-13:30",
+                            "teacher": "Полозков Р.Г."
+                        },
+                        {
+                            "name": "МЖГ",
+                            "room": "208СЛК",
+                            "time": "14:00",
+                            "fullTime": "14:00-15:30",
+                            "teacher": "Циркунов Ю.М."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "friday",
+                    "lessons": [
+                        {
+                            "name": "Иняз",
+                            "room": "442ФТШ, 507ФТШ, 508ФТШ",
+                            "time": "10:00",
+                            "fullTime": "10:00-11:30",
+                            "teacher": "-"
+                        },
+                        {
+                            "name": "Функциональный анализ (факультатив)",
+                            "room": "204СЛК",
+                            "time": "12:00",
+                            "fullTime": "12:00-13:30",
+                            "teacher": "Симонов С.А."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "saturday",
+                    "lessons": []
+                },
+                {
+                    "dayOfWeek": "sunday",
+                    "lessons": []
+                }
+            ]
+        },
+        {
+            "group": "202",
+            "weekDays": [
+                {
+                    "dayOfWeek": "monday",
+                    "lessons": [
+                        {
+                            "name": "Иняз",
+                            "room": "445ФТШ, 523СЛК",
+                            "time": "10:00",
+                            "fullTime": "10:00-11:30",
+                            "teacher": "-"
+                        },
+                        {
+                            "name": "Мат.анализ (практика)",
+                            "room": "313СЛК",
+                            "time": "12:00",
+                            "fullTime": "12:00-13:30",
+                            "teacher": "Михайлов А.С."
+                        },
+                        {
+                            "name": "Числ. методы (практика)",
+                            "room": "422СЛК",
+                            "time": "14:00",
+                            "fullTime": "14:00-15:30",
+                            "teacher": "Мсукар C."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "tuesday",
+                    "lessons": [
+                        {
+                            "name": "Числ. методы (лекция)",
+                            "room": "517СЛК",
+                            "time": "10:00",
+                            "fullTime": "10:00-11:30",
+                            "teacher": "Давыдов Р.В."
+                        },
+                        {
+                            "name": "Разработка ПО",
+                            "room": "422СЛК",
+                            "time": "12:00",
+                            "fullTime": "12:00-13:30",
+                            "teacher": "Андреев Ю.А."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "wednesday",
+                    "lessons": [
+                        {
+                            "name": "Введение в БИ (лекция)",
+                            "room": "430СЛК",
+                            "time": "10:00",
+                            "fullTime": "10:00-11:30",
+                            "teacher": "Симонов С.А."
+                        },
+                        {
+                            "name": "Введение в БИ (практика)",
+                            "room": "518СЛК",
+                            "time": "14:00",
+                            "fullTime": "14:00-15:30",
+                            "teacher": "Макашов А.А."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "thursday",
+                    "lessons": [
+                        {
+                            "name": "Базы Д (лекция)",
+                            "room": "305СЛК",
+                            "time": "12:00",
+                            "fullTime": "12:00-13:30",
+                            "teacher": "Помыткина Т.Б."
+                        },
+                        {
+                            "name": "Базы Д (практика)",
+                            "room": "305СЛК",
+                            "time": "14:00",
+                            "fullTime": "14:00-15:30",
+                            "teacher": "Помыткина Т.Б."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "friday",
+                    "lessons": [
+                        {
+                            "name": "Иняз",
+                            "room": "445ФТШ, 540ФТШ",
+                            "time": "10:00",
+                            "fullTime": "10:00-11:30",
+                            "teacher": "-"
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "saturday",
+                    "lessons": []
+                },
+                {
+                    "dayOfWeek": "sunday",
+                    "lessons": []
+                }
+            ]
+        },
+        {
+            "group": "301.1",
+            "weekDays": [
+                {
+                    "dayOfWeek": "monday",
+                    "lessons": [
+                        {
+                            "name": "Ф/Эл. Иссл. систем",
+                            "room": "305СЛК",
+                            "time": "10:00",
+                            "fullTime": "10:00-11:30",
+                            "teacher": "Новиков Ю.Н."
+                        },
+                        {
+                            "name": "Зондовые методы",
+                            "room": "433СЛК",
+                            "time": "14:00",
+                            "fullTime": "14:00-15:30",
+                            "teacher": "Голубок А.О."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "tuesday",
+                    "lessons": [
+                        {
+                            "name": "Физика конденс. состояния (лекция)",
+                            "room": "204СЛК",
+                            "time": "10:00",
+                            "fullTime": "10:00-11:30",
+                            "teacher": "Глазов М.М."
+                        },
+                        {
+                            "name": "Квантовая механика (лекция)",
+                            "room": "204СЛК",
+                            "time": "12:00",
+                            "fullTime": "12:00-13:30",
+                            "teacher": "Тарасенко С.А."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "wednesday",
+                    "lessons": [
+                        {
+                            "name": "Квантовая механика (практика)",
+                            "room": "208СЛК",
+                            "time": "11:00",
+                            "fullTime": "11:00-12:30",
+                            "teacher": "Авдеев И.Д."
+                        },
+                        {
+                            "name": "Диагностика ПТ",
+                            "room": "432СЛК",
+                            "time": "14:00",
+                            "fullTime": "14:00-15:30",
+                            "teacher": "Мишин М.В."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "thursday",
+                    "lessons": [
+                        {
+                            "name": "Симметрия кристаллов и ФП",
+                            "room": "204СЛК",
+                            "time": "14:00",
+                            "fullTime": "14:00-15:30",
+                            "teacher": "Аверкиев Н.С."
+                        },
+                        {
+                            "name": "Мат. методы в ТФ",
+                            "room": "422СЛК",
+                            "time": "16:00",
+                            "fullTime": "16:00-17:30",
+                            "teacher": "Щербак А.С."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "friday",
+                    "lessons": [
+                        {
+                            "name": "Иняз",
+                            "room": "442ФТШ, 445ФТШ",
+                            "time": "10:00",
+                            "fullTime": "10:00-11:30",
+                            "teacher": "-"
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "saturday",
+                    "lessons": []
+                },
+                {
+                    "dayOfWeek": "sunday",
+                    "lessons": []
+                }
+            ]
+        },
+        {
+            "group": "301.2",
+            "weekDays": [
+                {
+                    "dayOfWeek": "monday",
+                    "lessons": [
+                        {
+                            "name": "Физ. Химия",
+                            "room": "431СЛК",
+                            "time": "10:00",
+                            "fullTime": "10:00-11:30",
+                            "teacher": "Панов М.С."
+                        },
+                        {
+                            "name": "Введение в БФ",
+                            "room": "431СЛК",
+                            "time": "12:00",
+                            "fullTime": "12:00-13:30",
+                            "teacher": "Николаев Д.М."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "tuesday",
+                    "lessons": [
+                        {
+                            "name": "Орг. Химия (практика)",
+                            "room": "431СЛК",
+                            "time": "14:00",
+                            "fullTime": "14:00-15:30",
+                            "teacher": "Вязьмин С.Ю."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "wednesday",
+                    "lessons": [
+                        {
+                            "name": "Общая биология",
+                            "room": "431СЛК",
+                            "time": "10:00",
+                            "fullTime": "10:00-11:30",
+                            "teacher": "Амосова Л.И."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "thursday",
+                    "lessons": [
+                        {
+                            "name": "Орг. Химия (лекция)",
+                            "room": "431СЛК",
+                            "time": "14:00",
+                            "fullTime": "14:00-15:30",
+                            "teacher": "Вязьмин С.Ю."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "friday",
+                    "lessons": []
+                },
+                {
+                    "dayOfWeek": "saturday",
+                    "lessons": []
+                },
+                {
+                    "dayOfWeek": "sunday",
+                    "lessons": []
+                }
+            ]
+        },
+        {
+            "group": "301.3",
+            "weekDays": [
+                {
+                    "dayOfWeek": "monday",
+                    "lessons": [
+                        {
+                            "name": "Теория групп (лекция)",
+                            "room": "518СЛК",
+                            "time": "12:00",
+                            "fullTime": "12:00-13:30",
+                            "teacher": "Антоненко П.В."
+                        },
+                        {
+                            "name": "Теория групп (практика)",
+                            "room": "518СЛК",
+                            "time": "14:00",
+                            "fullTime": "14:00-15:30",
+                            "teacher": "Конюх Д."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "tuesday",
+                    "lessons": [
+                        {
+                            "name": "Строение и ЭЗ",
+                            "room": "517СЛК",
+                            "time": "16:00",
+                            "fullTime": "16:00-17:30",
+                            "teacher": "Штернин П.С."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "wednesday",
+                    "lessons": [
+                        {
+                            "name": "Введ. в современную АФ",
+                            "room": "517СЛК",
+                            "time": "14:00",
+                            "fullTime": "14:00-15:30",
+                            "teacher": "Куричин О.А."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "thursday",
+                    "lessons": [
+                        {
+                            "name": "Симметрия кристаллов и ФП",
+                            "room": "204СЛК",
+                            "time": "12:00",
+                            "fullTime": "12:00-13:30",
+                            "teacher": "Аверкиев Н.С."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "friday",
+                    "lessons": []
+                },
+                {
+                    "dayOfWeek": "saturday",
+                    "lessons": []
+                },
+                {
+                    "dayOfWeek": "sunday",
+                    "lessons": []
+                }
+            ]
+        },
+        {
+            "group": "302",
+            "weekDays": [
+                {
+                    "dayOfWeek": "monday",
+                    "lessons": [
+                        {
+                            "name": "Паралельное программ.",
+                            "room": "422СЛК",
+                            "time": "10:00",
+                            "fullTime": "10:00-11:30",
+                            "teacher": "Крашенинников С.В."
+                        },
+                        {
+                            "name": "Паралельное программ.",
+                            "room": "422СЛК",
+                            "time": "12:00",
+                            "fullTime": "12:00-13:30",
+                            "teacher": "Крашенинников С.В."
+                        },
+                        {
+                            "name": "Иняз",
+                            "room": "442ФТШ",
+                            "time": "14:00",
+                            "fullTime": "14:00-15:30",
+                            "teacher": "Казей Е.О."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "tuesday",
+                    "lessons": [
+                        {
+                            "name": "История и метод. СБ",
+                            "room": "432СЛК",
+                            "time": "10:00",
+                            "fullTime": "10:00-11:30",
+                            "teacher": "Степанова А.Б."
+                        },
+                        {
+                            "name": "История и метод. СБ",
+                            "room": "432СЛК",
+                            "time": "12:00",
+                            "fullTime": "12:00-13:30",
+                            "teacher": "Степанова А.Б."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "wednesday",
+                    "lessons": [
+                        {
+                            "name": "Т.В. и Мат. стат. (лекция)",
+                            "room": "431СЛК",
+                            "time": "10:00",
+                            "fullTime": "10:00-11:30",
+                            "teacher": "Якубович Ю.В."
+                        },
+                        {
+                            "name": "Т.В. и Мат. стат. (практика)",
+                            "room": "431СЛК",
+                            "time": "12:00",
+                            "fullTime": "12:00-13:30",
+                            "teacher": "Якубович Ю.В."
+                        },
+                        {
+                            "name": "Молекулярная и КБ",
+                            "room": "523СЛК",
+                            "time": "14:00",
+                            "fullTime": "14:00-15:30",
+                            "teacher": "Рогоза Т.М."
+                        },
+                        {
+                            "name": "Иняз",
+                            "room": "442ФТШ",
+                            "time": "16:00",
+                            "fullTime": "16:00-17:30",
+                            "teacher": "Раздиванович Е.И."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "thursday",
+                    "lessons": [
+                        {
+                            "name": "Обработка данных NGS-секв. (лекция)",
+                            "room": "430СЛК",
+                            "time": "10:00",
+                            "fullTime": "10:00-11:30",
+                            "teacher": "Симонов С.А."
+                        },
+                        {
+                            "name": "Обработка данных NGS-секв. (практика)",
+                            "room": "430СЛК",
+                            "time": "12:00",
+                            "fullTime": "12:00-13:30",
+                            "teacher": "Симонов С.А."
+                        },
+                        {
+                            "name": "Методы анализа ОС",
+                            "room": "430СЛК",
+                            "time": "14:00",
+                            "fullTime": "14:00-15:30",
+                            "teacher": "Макашов А.А."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "friday",
+                    "lessons": []
+                },
+                {
+                    "dayOfWeek": "saturday",
+                    "lessons": [
+                        {
+                            "name": "Биометрические СиТ",
+                            "room": "521СЛК",
+                            "time": "10:00",
+                            "fullTime": "10:00-11:30",
+                            "teacher": "Зайцева А.Ю."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "sunday",
+                    "lessons": []
+                }
+            ]
+        },
+        {
+            "group": "401.1",
+            "weekDays": [
+                {
+                    "dayOfWeek": "monday",
+                    "lessons": [
+                        {
+                            "name": "Стат. физика (практика)",
+                            "room": "430СЛК",
+                            "time": "10:00",
+                            "fullTime": "10:00-11:30",
+                            "teacher": "Мартюкова Д.С."
+                        },
+                        {
+                            "name": "Иняз",
+                            "room": "445ФТШ, 507ФТШ, 523СЛК",
+                            "time": "12:00",
+                            "fullTime": "12:00-13:30",
+                            "teacher": "-"
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "tuesday",
+                    "lessons": [
+                        {
+                            "name": "Стат. физика (лекция)",
+                            "room": "422ФТШ",
+                            "time": "10:00",
+                            "fullTime": "10:00-11:30",
+                            "teacher": "Мартюкова Д.С."
+                        },
+                        {
+                            "name": "Физика п/п пр. приборов",
+                            "room": "522СЛК",
+                            "time": "12:00",
+                            "fullTime": "12:00-13:30",
+                            "teacher": "Берт Н.А."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "wednesday",
+                    "lessons": [
+                        {
+                            "name": "Оптика п/п",
+                            "room": "522СЛК",
+                            "time": "14:00",
+                            "fullTime": "14:00-15:30",
+                            "teacher": "Смирнов Д.С."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "thursday",
+                    "lessons": [
+                        {
+                            "name": "ОТО",
+                            "room": "206СЛК",
+                            "time": "10:00",
+                            "fullTime": "10:00-11:30",
+                            "teacher": "Иванчик А.В."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "friday",
+                    "lessons": []
+                },
+                {
+                    "dayOfWeek": "saturday",
+                    "lessons": []
+                },
+                {
+                    "dayOfWeek": "sunday",
+                    "lessons": []
+                }
+            ]
+        },
+        {
+            "group": "401.2",
+            "weekDays": [
+                {
+                    "dayOfWeek": "monday",
+                    "lessons": [
+                        {
+                            "name": "Основы биохимии",
+                            "room": "522СЛК",
+                            "time": "10:00",
+                            "fullTime": "10:00-11:30",
+                            "teacher": "Галкин М.А."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "tuesday",
+                    "lessons": [
+                        {
+                            "name": "М.иссл. БС",
+                            "room": "430СЛК",
+                            "time": "12:00",
+                            "fullTime": "12:00-13:30",
+                            "teacher": "Букатин А.С., Бойцов В.М."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "wednesday",
+                    "lessons": [
+                        {
+                            "name": "Генная инженерия",
+                            "room": "430СЛК",
+                            "time": "14:00",
+                            "fullTime": "14:00-15:30",
+                            "teacher": "Бондарев С.А."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "thursday",
+                    "lessons": [
+                        {
+                            "name": "Молекулярная биология",
+                            "room": "523СЛК",
+                            "time": "10:00",
+                            "fullTime": "10:00-11:30",
+                            "teacher": "Рогоза Т.М."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "friday",
+                    "lessons": []
+                },
+                {
+                    "dayOfWeek": "saturday",
+                    "lessons": []
+                },
+                {
+                    "dayOfWeek": "sunday",
+                    "lessons": []
+                }
+            ]
+        },
+
+        {
+            "group": "401.3",
+            "weekDays": [
+                {
+                    "dayOfWeek": "monday",
+                    "lessons": [
+                        {
+                            "name": "Стат. физика (практика)",
+                            "room": "430СЛК",
+                            "time": "10:00",
+                            "fullTime": "10:00-11:30",
+                            "teacher": "Мартюкова Д.С."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "tuesday",
+                    "lessons": [
+                        {
+                            "name": "Физика п/п.пр.**",
+                            "room": "522СЛК",
+                            "time": "12:00",
+                            "fullTime": "12:00-13:30",
+                            "teacher": "Берт Н.А."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "wednesday",
+                    "lessons": [
+                        {
+                            "name": "Оптика п/п*",
+                            "room": "522СЛК",
+                            "time": "14:00",
+                            "fullTime": "14:00-15:30",
+                            "teacher": "Смирнов Д.С."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "thursday",
+                    "lessons": [
+                        {
+                            "name": "Семинар по СПФ",
+                            "room": "432СЛК",
+                            "time": "10:00",
+                            "fullTime": "10:00-11:30",
+                            "teacher": "Качаровский В.Ю."
+                        },
+                        {
+                            "name": "Фунд. ФРЗ**",
+                            "room": "517СЛК",
+                            "time": "12:00",
+                            "fullTime": "12:00-13:30",
+                            "teacher": "Чугунов А.И."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "friday",
+                    "lessons": []
+                },
+                {
+                    "dayOfWeek": "saturday",
+                    "lessons": []
+                },
+                {
+                    "dayOfWeek": "sunday",
+                    "lessons": []
+                }
+            ]
+        },
+        {
+            "group": "402",
+            "weekDays": [
+                {
+                    "dayOfWeek": "monday",
+                    "lessons": [
+                        {
+                            "name": "Обучение с подкреплением",
+                            "room": "517СЛК",
+                            "time": "10:00",
+                            "fullTime": "10:00-11:30",
+                            "teacher": "Андреев Ю.А."
+                        },
+                        {
+                            "name": "Глубинное Об.",
+                            "room": "517СЛК",
+                            "time": "12:00",
+                            "fullTime": "12:00-13:30",
+                            "teacher": "Андреев Ю.А."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "tuesday",
+                    "lessons": [
+                        {
+                            "name": "Презентация рез. Иссл.",
+                            "room": "517СЛК",
+                            "time": "14:00",
+                            "fullTime": "14:00-15:30",
+                            "teacher": "Рогоза Т.М."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "wednesday",
+                    "lessons": [
+                        {
+                            "name": "Биотехнологии",
+                            "room": "432СЛК",
+                            "time": "10:00",
+                            "fullTime": "10:00-11:30",
+                            "teacher": "Макашов А.А."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "thursday",
+                    "lessons": [
+                        {
+                            "name": "Обработка БОД",
+                            "room": "305СЛК",
+                            "time": "12:00",
+                            "fullTime": "12:00-13:30",
+                            "teacher": "Денисов А.Р."
+                        },
+                        {
+                            "name": "Обработка БОД",
+                            "room": "305СЛК",
+                            "time": "14:00",
+                            "fullTime": "14:00-15:30",
+                            "teacher": "Денисов А.Р."
+                        }
+                    ]
+                },
+                {
+                    "dayOfWeek": "friday",
+                    "lessons": []
+                },
+                {
+                    "dayOfWeek": "saturday",
+                    "lessons": []
+                },
+                {
+                    "dayOfWeek": "sunday",
+                    "lessons": []
                 }
             ]
         }

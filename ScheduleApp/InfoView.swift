@@ -83,6 +83,7 @@ struct InfoView: View {
             .backgroundStyle(.black)
             .transition(.blurReplace)
             .padding()
+            .shadow(radius: 5)
         }
     }
 }
