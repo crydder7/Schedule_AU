@@ -29,28 +29,28 @@ class CalendarManager: ObservableObject {
     }
 }
 
-struct Schedule: Decodable, Identifiable {
+struct Schedule: Decodable, Identifiable, Encodable {
     var id = UUID()
     var group: String
     var weekDays: [WeekDays]
     private enum CodingKeys : String, CodingKey { case group, weekDays }
 }
 
-struct ScheduleFull: Decodable, Identifiable {
+struct ScheduleFull: Decodable, Identifiable, Encodable {
     var id = UUID()
     var schedule: [Schedule]
     private enum CodingKeys : String, CodingKey { case schedule }
 }
 
-struct WeekDays: Decodable, Identifiable{
+struct WeekDays: Decodable, Identifiable, Encodable{
     var id = UUID()
     var dayOfWeek: String
     var lessons: [Lesson]
     private enum CodingKeys : String, CodingKey { case dayOfWeek, lessons }
 }
 
-struct Lesson: Decodable, Identifiable{
-    var id = UUID()
+struct Lesson: Decodable, Identifiable, Encodable{
+    let id = UUID()
     var name: String
     var room: String
     var time: String

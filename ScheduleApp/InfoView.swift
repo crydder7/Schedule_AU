@@ -1,4 +1,4 @@
-
+import WidgetKit
 import SwiftUI
 
 struct InfoView: View {
@@ -8,8 +8,8 @@ struct InfoView: View {
     let smallWidth = UIScreen.main.bounds.width - 100
     let bigHeight = UIScreen.main.bounds.height / 5
     let bigWidth = UIScreen.main.bounds.width - 70
-    @State private var favGroup: String = UserDefaults.standard.string(forKey: "favGroup") ?? "101.1"
-    private var groups = ["101.1","101.2","102.1","102.2","201.1","201.2","202","301.1","301.2","301.3","302","401.1","401.2","402.1","402.2"]
+    @State private var favGroup: String = UserDefaults(suiteName: "group.dev.kaidder.ScheduleApp")?.string(forKey: "favGroup") ?? "101.1"
+    private var groups = ["101.1","101.2","102.1","102.2","201.1","202","301.1","301.2","301.3","302","401.1","401.2","401.3","402"]
     @State var scale: CGFloat = 1
     
     var body: some View {
@@ -27,7 +27,22 @@ struct InfoView: View {
                     }
                     .pickerStyle(.menu)
                     .onChange(of: favGroup) {
-                        UserDefaults.standard.set(favGroup, forKey: "favGroup")
+                        let defaults = UserDefaults(suiteName: "group.dev.kaidder.ScheduleApp")
+                        defaults?.set(favGroup, forKey: "favGroup")
+//                        let favGroup = UserDefaults.standard.string(forKey: "favGroup") ?? "101.1"
+                        let data = readLocalJSONFile(forName: "schedule")
+                        let _schedule = parse(jsonData: data!)
+                        for i in _schedule!.schedule{
+                            for j in i.weekDays{
+                                if let encoded = try? JSONEncoder().encode(j.lessons) {
+                                    defaults?.set(encoded, forKey: "\(j.dayOfWeek)_\(i.group)")
+                                }
+                            }
+                        }
+                        DispatchQueue.global().asyncAfter(deadline: .now() + 0.3){
+                            WidgetCenter.shared.reloadAllTimelines()
+                        }
+                        
                     }
                 }
                 .scrollContentBackground(.hidden)
@@ -36,6 +51,7 @@ struct InfoView: View {
                     .shadow(radius: 10)
                 Text("Если у вас возникли вопросы или предложения, то обращайтесь в телеграм!")
                     .font(.headline)
+                    .lineLimit(3)
                     .multilineTextAlignment(.center)
                     .padding()
                 Link(destination: URL(string: "https://t.me/SPBAU_Help_Bot")!){

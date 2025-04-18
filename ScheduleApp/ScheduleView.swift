@@ -1,10 +1,11 @@
 import SwiftUI
+import WidgetKit
 
 struct ScheduleView: View {
     let dateForm = DateFormatter()
-    private var groups = ["101.1","101.2","102.1","102.2","201.1","201.2","202","301.1","301.2","301.3","302","401.1","401.2","401.3","402"]
+    private var groups = ["101.1","101.2","102.1","102.2","201.1","202","301.1","301.2","301.3","302","401.1","401.2","401.3","402"]
     private var styles = ["List", "Table"]
-    @State private var pickedGroup: String = UserDefaults.standard.string(forKey: "favGroup") ?? "101.1"
+    @State private var pickedGroup: String = UserDefaults(suiteName: "group.dev.kaidder.ScheduleApp")?.string(forKey: "favGroup") ?? "101.1"
     @State private var pickedDate: Date = Date()
     @State var fullSchedule: ScheduleFull?
     @State var pickedSchedule: [Schedule] = []
@@ -56,10 +57,35 @@ struct ScheduleView: View {
                     group = ""
                     pickedSchedule = []
                     isLoad = true
-                    let data = readLocalJSONFile(forName: "schedule")
-                    let _schedule = parse(jsonData: data!)
-                    guard let _schedule = _schedule else { showAlert = true; return }
-                    fullSchedule = _schedule
+                    let defaults = UserDefaults(suiteName: "group.dev.kaidder.ScheduleApp")
+                    if defaults?.data(forKey: "Schedule") == nil{
+                        let data = readLocalJSONFile(forName: "schedule")
+                        let _schedule = parse(jsonData: data!)
+                        guard let _schedule = _schedule else { showAlert = true; return }
+                        fullSchedule = _schedule
+                        for i in fullSchedule!.schedule{
+                            for j in i.weekDays{
+                                if let encoded = try? JSONEncoder().encode(j.lessons) {
+                                    defaults?.set(encoded, forKey: "\(j.dayOfWeek)_\(i.group)")
+                                }
+                            }
+                        }
+                        if let encoded = try? JSONEncoder().encode(fullSchedule) {
+                            defaults?.set(encoded, forKey: "Schedule")
+                        }
+                        DispatchQueue.global().asyncAfter(deadline: .now() + 0.3){
+                            WidgetCenter.shared.reloadAllTimelines()
+                        }
+                    } else{
+                        let defaults = UserDefaults(suiteName: "group.dev.kaidder.ScheduleApp")
+                        if  let data = defaults?.data(forKey: "Schedule"){
+                            let decoder = JSONDecoder()
+                            if let schedule = try? decoder.decode(ScheduleFull.self, from: data) {
+                                fullSchedule = schedule
+                            }
+                        }
+                    }
+                    
                     if fullDates{
                         isScrollable = false
                         for i in fullSchedule!.schedule{

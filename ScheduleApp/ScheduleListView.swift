@@ -51,7 +51,7 @@ struct ScheduleListView: View {
                             }
                         }
                     }
-                    .multilineTextAlignment(.center)
+//                    .multilineTextAlignment(.center)
                 }
             }
             .listStyle(.insetGrouped)
